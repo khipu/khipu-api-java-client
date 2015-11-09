@@ -9,14 +9,27 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-06T16:08:59.116-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-09T16:31:38.083-03:00")
 public class BankItem   {
   
+  private String bankId = null;
   private String name = null;
   private String message = null;
   private Double minAmount = null;
   private String type = null;
   private String parent = null;
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("bank_id")
+  public String getBankId() {
+    return bankId;
+  }
+  public void setBankId(String bankId) {
+    this.bankId = bankId;
+  }
 
   
   /**
@@ -85,6 +98,7 @@ public class BankItem   {
     StringBuilder sb = new StringBuilder();
     sb.append("class BankItem {\n");
     
+    sb.append("    bankId: ").append(StringUtil.toIndentedString(bankId)).append("\n");
     sb.append("    name: ").append(StringUtil.toIndentedString(name)).append("\n");
     sb.append("    message: ").append(StringUtil.toIndentedString(message)).append("\n");
     sb.append("    minAmount: ").append(StringUtil.toIndentedString(minAmount)).append("\n");

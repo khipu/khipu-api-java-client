@@ -6,14 +6,14 @@ import com.khipu.Configuration;
 import com.khipu.Pair;
 import com.khipu.TypeRef;
 
-import com.khipu.api.model.ServiceError;
 import com.khipu.api.model.BanksResponse;
-import com.khipu.api.model.ValidationError;
+import com.khipu.api.model.ServiceError;
 import com.khipu.api.model.AuthorizationError;
+import com.khipu.api.model.ValidationError;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-06T16:08:59.116-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-09T16:31:38.083-03:00")
 public class BanksApi {
   private ApiClient apiClient;
 

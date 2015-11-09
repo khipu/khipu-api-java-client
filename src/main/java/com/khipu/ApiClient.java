@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.TimeZone;
 
+import java.math.BigDecimal;
+
 import java.net.URLEncoder;
 
 import java.io.IOException;
@@ -40,13 +42,14 @@ import com.khipu.auth.ApiKeyAuth;
 import com.khipu.auth.OAuth;
 import com.khipu.auth.KhipuAuth;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-06T16:08:59.116-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-09T16:31:38.083-03:00")
 public class ApiClient {
   private Map<String, Client> hostMap = new HashMap<String, Client>();
   private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
   private boolean debugging = false;
   private String basePath = "https://khipu.com/api/2.0";
   private JSON json = new JSON();
+  private String userAgent = "";
 
   private Map<String, Authentication> authentications;
 
@@ -64,7 +67,7 @@ public class ApiClient {
     this.dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
 
     // Set default User-Agent.
-    setUserAgent("khipu-api-java-client/2.0.2");
+    setUserAgent("khipu-api-java-client/2.1.0");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
@@ -177,11 +180,16 @@ public class ApiClient {
     throw new RuntimeException("No khipu authentication configured!");
   }
 
+  public void setPlatform(String name, String version) {
+    addDefaultHeader("User-Agent", this.userAgent + "|" + name + "/" + version);
+  }
+
   /**
    * Set the User-Agent header's value (by adding to the default header map).
    */
   public ApiClient setUserAgent(String userAgent) {
-    addDefaultHeader("User-Agent", userAgent);
+    this.userAgent = userAgent;
+    addDefaultHeader("User-Agent", this.userAgent);
     return this;
   }
 
@@ -254,6 +262,8 @@ public class ApiClient {
       return "";
     } else if (param instanceof Date) {
       return formatDate((Date) param);
+    } else if (param instanceof Double) {
+      return BigDecimal.valueOf((Double )param).toString();
     } else if (param instanceof Collection) {
       StringBuilder b = new StringBuilder();
       for(Object o : (Collection)param) {

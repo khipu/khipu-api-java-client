@@ -1,6 +1,7 @@
 package com.khipu.api.model;
 
 import com.khipu.StringUtil;
+import java.util.*;
 import com.khipu.api.model.BankItem;
 
 
@@ -10,20 +11,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-06T16:08:59.116-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-09T16:31:38.083-03:00")
 public class BanksResponse   {
   
-  private BankItem banks = null;
+  private List<BankItem> banks = new ArrayList<BankItem>();
 
   
   /**
    **/
   @ApiModelProperty(value = "")
   @JsonProperty("banks")
-  public BankItem getBanks() {
+  public List<BankItem> getBanks() {
     return banks;
   }
-  public void setBanks(BankItem banks) {
+  public void setBanks(List<BankItem> banks) {
     this.banks = banks;
   }
 
