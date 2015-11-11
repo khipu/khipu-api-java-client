@@ -6,7 +6,7 @@ import com.khipu.ApiClient;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-09T16:31:38.083-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-11T12:32:42.192-03:00")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;

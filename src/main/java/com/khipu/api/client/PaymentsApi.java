@@ -16,7 +16,7 @@ import com.khipu.api.model.SuccessResponse;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-09T16:31:38.083-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-11T12:32:42.192-03:00")
 public class PaymentsApi {
   private ApiClient apiClient;
 
@@ -97,7 +97,7 @@ public class PaymentsApi {
    * Crea un pago en khipu y obtiene las URLs para redirección al usuario para que complete el pago.
    * @param subject Motivo
    * @param currency El código de moneda en formato ISO-4217
-   * @param amount El monto del cobro. Sin separador de miles y usando \&quot;.\&quot; como separador de decimales. Hasta 4 lugares decimales, dependiendo de la moneda.
+   * @param amount El monto del cobro. Sin separador de miles y usando &#39;.&#39; como separador de decimales. Hasta 4 lugares decimales, dependiendo de la moneda
    * @param transactionId Identificador propio de la  transacción. Ej: número de factura u orden de compra
    * @param custom Parámetro para enviar información personalizada de la transacción. Ej: documento XML con el detalle del carro de compra
    * @param body Descripción del cobro
@@ -108,10 +108,10 @@ public class PaymentsApi {
    * @param notifyUrl La dirección del web-service que utilizará khipu para notificar cuando el pago esté conciliado
    * @param notifyApiVersion Versión de la API de notifiaciones para recibir avisos por web-service
    * @param expiresDate Fecha de expiración del cobro. Pasada esta fecha el cobro es inválido. Formato ISO-8601. Ej: 2017-03-01T13:00:00Z
-   * @param sendEmail Si es \&quot;true\&quot;, se enviará una solicitud de cobro al correo especificado en \&quot;payer_email\&quot;
-   * @param payerName Nombre del pagador. Es obligatorio cuando send_email es \&quot;true\&quot;
-   * @param payerEmail Correo del pagador. Es obligatorio cuando send_email es \&quot;true\&quot;
-   * @param sendReminders Si es \&quot;true\&quot;, se enviarán recordatorios de cobro.
+   * @param sendEmail Si es &#39;true&#39;, se enviará una solicitud de cobro al correo especificado en &#39;payer_email&#39;
+   * @param payerName Nombre del pagador. Es obligatorio cuando send_email es &#39;true&#39;
+   * @param payerEmail Correo del pagador. Es obligatorio cuando send_email es &#39;true&#39;
+   * @param sendReminders Si es &#39;true&#39;, se enviarán recordatorios de cobro.
    * @param responsibleUserEmail Correo electrónico del responsable de este cobro, debe corresponder a un usuario khipu con permisos para cobrar usando esta cuenta de cobro
    * @param fixedPayerPersonalIdentifier Identificador personal. Si se especifica, solo podrá ser pagado usando ese identificador
    * @param integratorFee Comisión para el integrador. Sólo es válido si la cuenta de cobro tiene una cuenta de integrador asociada

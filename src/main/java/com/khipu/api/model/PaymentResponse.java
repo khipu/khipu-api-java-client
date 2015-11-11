@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-09T16:31:38.083-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-11T12:32:42.192-03:00")
 public class PaymentResponse   {
   
   private String paymentId = null;
@@ -44,7 +44,7 @@ public class PaymentResponse   {
   private String transactionId = null;
   private String custom = null;
   private String responsibleUserEmail = null;
-  private String sendReminders = null;
+  private Boolean sendReminders = null;
   private Boolean sendEmail = null;
 
   
@@ -412,10 +412,10 @@ public class PaymentResponse   {
    **/
   @ApiModelProperty(value = "")
   @JsonProperty("send_reminders")
-  public String getSendReminders() {
+  public Boolean getSendReminders() {
     return sendReminders;
   }
-  public void setSendReminders(String sendReminders) {
+  public void setSendReminders(Boolean sendReminders) {
     this.sendReminders = sendReminders;
   }
 
