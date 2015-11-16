@@ -2,6 +2,7 @@ package com.khipu.api.model;
 
 import com.khipu.StringUtil;
 import java.util.Date;
+import java.math.BigDecimal;
 import java.util.*;
 
 
@@ -11,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-11T12:32:42.192-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-16T16:37:12.753-03:00")
 public class PaymentResponse   {
   
   private String paymentId = null;
@@ -20,6 +21,9 @@ public class PaymentResponse   {
   private String transferUrl = null;
   private String appUrl = null;
   private Boolean readyForTerminal = null;
+  private String notificationToken = null;
+  private BigDecimal receiverId = null;
+  private Date conciliationDate = null;
   private String subject = null;
   private Double amount = null;
   private String currency = null;
@@ -117,6 +121,42 @@ public class PaymentResponse   {
   }
   public void setReadyForTerminal(Boolean readyForTerminal) {
     this.readyForTerminal = readyForTerminal;
+  }
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("notification_token")
+  public String getNotificationToken() {
+    return notificationToken;
+  }
+  public void setNotificationToken(String notificationToken) {
+    this.notificationToken = notificationToken;
+  }
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("receiver_id")
+  public BigDecimal getReceiverId() {
+    return receiverId;
+  }
+  public void setReceiverId(BigDecimal receiverId) {
+    this.receiverId = receiverId;
+  }
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("conciliation_date")
+  public Date getConciliationDate() {
+    return conciliationDate;
+  }
+  public void setConciliationDate(Date conciliationDate) {
+    this.conciliationDate = conciliationDate;
   }
 
   
@@ -444,6 +484,9 @@ public class PaymentResponse   {
     sb.append("    transferUrl: ").append(StringUtil.toIndentedString(transferUrl)).append("\n");
     sb.append("    appUrl: ").append(StringUtil.toIndentedString(appUrl)).append("\n");
     sb.append("    readyForTerminal: ").append(StringUtil.toIndentedString(readyForTerminal)).append("\n");
+    sb.append("    notificationToken: ").append(StringUtil.toIndentedString(notificationToken)).append("\n");
+    sb.append("    receiverId: ").append(StringUtil.toIndentedString(receiverId)).append("\n");
+    sb.append("    conciliationDate: ").append(StringUtil.toIndentedString(conciliationDate)).append("\n");
     sb.append("    subject: ").append(StringUtil.toIndentedString(subject)).append("\n");
     sb.append("    amount: ").append(StringUtil.toIndentedString(amount)).append("\n");
     sb.append("    currency: ").append(StringUtil.toIndentedString(currency)).append("\n");
