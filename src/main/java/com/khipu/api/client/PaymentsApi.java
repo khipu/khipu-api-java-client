@@ -16,7 +16,7 @@ import com.khipu.api.model.SuccessResponse;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-16T16:37:12.753-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-16T17:01:05.595-03:00")
 public class PaymentsApi {
   private ApiClient apiClient;
 

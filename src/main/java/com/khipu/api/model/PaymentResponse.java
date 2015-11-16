@@ -2,7 +2,6 @@ package com.khipu.api.model;
 
 import com.khipu.StringUtil;
 import java.util.Date;
-import java.math.BigDecimal;
 import java.util.*;
 
 
@@ -12,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-16T16:37:12.753-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-16T17:01:05.595-03:00")
 public class PaymentResponse   {
   
   private String paymentId = null;
@@ -22,7 +21,7 @@ public class PaymentResponse   {
   private String appUrl = null;
   private Boolean readyForTerminal = null;
   private String notificationToken = null;
-  private BigDecimal receiverId = null;
+  private Long receiverId = null;
   private Date conciliationDate = null;
   private String subject = null;
   private Double amount = null;
@@ -140,10 +139,10 @@ public class PaymentResponse   {
    **/
   @ApiModelProperty(value = "")
   @JsonProperty("receiver_id")
-  public BigDecimal getReceiverId() {
+  public Long getReceiverId() {
     return receiverId;
   }
-  public void setReceiverId(BigDecimal receiverId) {
+  public void setReceiverId(Long receiverId) {
     this.receiverId = receiverId;
   }
 
