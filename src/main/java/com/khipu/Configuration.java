@@ -1,6 +1,6 @@
 package com.khipu;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-16T17:01:05.595-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-24T11:29:23.565-03:00")
 public class Configuration {
   private static ApiClient defaultApiClient = new ApiClient();
 

@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-16T17:01:05.595-03:00")
-public class PaymentResponse   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-24T11:29:23.565-03:00")
+public class PaymentsResponse   {
   
   private String paymentId = null;
   private String paymentUrl = null;
@@ -475,7 +475,7 @@ public class PaymentResponse   {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaymentResponse {\n");
+    sb.append("class PaymentsResponse {\n");
     
     sb.append("    paymentId: ").append(StringUtil.toIndentedString(paymentId)).append("\n");
     sb.append("    paymentUrl: ").append(StringUtil.toIndentedString(paymentUrl)).append("\n");

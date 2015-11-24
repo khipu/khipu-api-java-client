@@ -6,17 +6,17 @@ import com.khipu.Configuration;
 import com.khipu.Pair;
 import com.khipu.TypeRef;
 
-import com.khipu.api.model.PaymentResponse;
+import com.khipu.api.model.PaymentsResponse;
 import com.khipu.api.model.ServiceError;
 import com.khipu.api.model.AuthorizationError;
 import com.khipu.api.model.ValidationError;
 import java.util.Date;
-import com.khipu.api.model.CreateResponse;
+import com.khipu.api.model.PaymentsCreateResponse;
 import com.khipu.api.model.SuccessResponse;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-16T17:01:05.595-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-24T11:29:23.565-03:00")
 public class PaymentsApi {
   private ApiClient apiClient;
 
@@ -41,9 +41,9 @@ public class PaymentsApi {
    * Obtener información de un pago
    * Información completa del pago. Datos con los que fue creado y el estado actual del pago. Se obtiene del notification_token que envia khipu cuando el pago es conciliado.
    * @param notificationToken Token de notifiación recibido usando la API de notificaiones 1.3 o superior.
-   * @return PaymentResponse
+   * @return PaymentsResponse
    */
-  public PaymentResponse paymentsGet (String notificationToken) throws ApiException {
+  public PaymentsResponse paymentsGet (String notificationToken) throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
@@ -84,7 +84,7 @@ public class PaymentsApi {
 
     
     
-    TypeRef returnType = new TypeRef<PaymentResponse>() {};
+    TypeRef returnType = new TypeRef<PaymentsResponse>() {};
     return apiClient.invokeAPI(path, "GET", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
     
@@ -115,9 +115,9 @@ public class PaymentsApi {
    * @param responsibleUserEmail Correo electrónico del responsable de este cobro, debe corresponder a un usuario khipu con permisos para cobrar usando esta cuenta de cobro
    * @param fixedPayerPersonalIdentifier Identificador personal. Si se especifica, solo podrá ser pagado usando ese identificador
    * @param integratorFee Comisión para el integrador. Sólo es válido si la cuenta de cobro tiene una cuenta de integrador asociada
-   * @return CreateResponse
+   * @return PaymentsCreateResponse
    */
-  public CreateResponse paymentsPost (String subject, String currency, Double amount, String transactionId, String custom, String body, String bankId, String returnUrl, String cancelUrl, String pictureUrl, String notifyUrl, String notifyApiVersion, Date expiresDate, Boolean sendEmail, String payerName, String payerEmail, Boolean sendReminders, String responsibleUserEmail, String fixedPayerPersonalIdentifier, Double integratorFee) throws ApiException {
+  public PaymentsCreateResponse paymentsPost (String subject, String currency, Double amount, String transactionId, String custom, String body, String bankId, String returnUrl, String cancelUrl, String pictureUrl, String notifyUrl, String notifyApiVersion, Date expiresDate, Boolean sendEmail, String payerName, String payerEmail, Boolean sendReminders, String responsibleUserEmail, String fixedPayerPersonalIdentifier, Double integratorFee) throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
@@ -206,7 +206,7 @@ public class PaymentsApi {
 
     
     
-    TypeRef returnType = new TypeRef<CreateResponse>() {};
+    TypeRef returnType = new TypeRef<PaymentsCreateResponse>() {};
     return apiClient.invokeAPI(path, "POST", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
     
@@ -218,9 +218,9 @@ public class PaymentsApi {
    * Obtener información de un pago
    * Información completa del pago. Datos con los que fue creado y el estado actual del pago.
    * @param id Identificador del pago
-   * @return PaymentResponse
+   * @return PaymentsResponse
    */
-  public PaymentResponse paymentsIdGet (String id) throws ApiException {
+  public PaymentsResponse paymentsIdGet (String id) throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
@@ -260,7 +260,7 @@ public class PaymentsApi {
 
     
     
-    TypeRef returnType = new TypeRef<PaymentResponse>() {};
+    TypeRef returnType = new TypeRef<PaymentsResponse>() {};
     return apiClient.invokeAPI(path, "GET", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
     
