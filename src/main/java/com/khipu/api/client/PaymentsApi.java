@@ -16,7 +16,7 @@ import com.khipu.api.model.SuccessResponse;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-24T11:29:23.565-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-02-01T14:39:50.873-03:00")
 public class PaymentsApi {
   private ApiClient apiClient;
 
@@ -323,12 +323,13 @@ public class PaymentsApi {
   }
   
   /**
-   * Reembolsar un pago
-   * Reembolsa el total del monto del pago. Esta operación solo se puede realizar en los comercios que recauden en cuenta khipu y antes de la rendición de los fondos correspondientes.
+   * Reembolsar total o parcialmente un pago
+   * Reembolsa total o parcialmente el monto de un pago. Esta operación solo se puede realizar en los comercios que recauden en cuenta khipu y antes de la rendición de los fondos correspondientes.
    * @param id Identificador del pago
+   * @param amount El monto a devolver. Sin separador de miles y usando &#39;.&#39; como separador de decimales. Hasta 4 lugares decimales, dependiendo de la moneda. Si se omite el reembolso se hará por el total del monto del pago.
    * @return SuccessResponse
    */
-  public SuccessResponse paymentsIdRefundsPost (String id) throws ApiException {
+  public SuccessResponse paymentsIdRefundsPost (String id, Double amount) throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
@@ -350,6 +351,8 @@ public class PaymentsApi {
 
     
 
+    if (amount != null)
+      formParams.put("amount", amount);
     
 
     final String[] accepts = {
