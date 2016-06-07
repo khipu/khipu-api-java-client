@@ -1,5 +1,5 @@
 group = 'com.khipu'
-version = '2.6.0'
+version = '2.6.1'
 
 buildscript {
     repositories {
@@ -89,15 +89,15 @@ if(hasProperty('target') && target == 'android') {
 ext {
     swagger_annotations_version = "1.5.0"
     jackson_version = "2.4.2"
-    jersey_version = "1.18"
+    jersey_version = "2.6"
     jodatime_version = "2.3"
     junit_version = "4.8.1"
 }
 
 dependencies {
     compile "io.swagger:swagger-annotations:$swagger_annotations_version"
-    compile "com.sun.jersey:jersey-client:$jersey_version"
-    compile "com.sun.jersey.contribs:jersey-multipart:$jersey_version"
+    compile "org.glassfish.jersey.core:jersey-client:$jersey_version"
+    compile "org.glassfish.jersey.media:jersey-media-multipart:$jersey_version"
     compile "com.fasterxml.jackson.core:jackson-core:$jackson_version"
     compile "com.fasterxml.jackson.core:jackson-annotations:$jackson_version"
     compile "com.fasterxml.jackson.core:jackson-databind:$jackson_version"

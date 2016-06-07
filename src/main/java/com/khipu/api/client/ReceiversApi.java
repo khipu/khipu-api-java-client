@@ -13,7 +13,7 @@ import com.khipu.api.model.ValidationError;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-02-01T14:39:50.873-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-07T14:46:41.422-04:00")
 public class ReceiversApi {
   private ApiClient apiClient;
 
@@ -56,83 +56,82 @@ public class ReceiversApi {
    */
   public ReceiversCreateResponse receiversPost (String adminFirstName, String adminLastName, String adminEmail, String countryCode, String businessIdentifier, String businessCategory, String businessName, String businessPhone, String businessAddressLine1, String businessAddressLine2, String businessAddressLine3, String contactFullName, String contactJobTitle, String contactEmail, String contactPhone) throws ApiException {
     Object postBody = null;
-    byte[] postBinaryBody = null;
     
-     // verify the required parameter 'adminFirstName' is set
-     if (adminFirstName == null) {
-        throw new ApiException(400, "Missing the required parameter 'adminFirstName' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'adminLastName' is set
-     if (adminLastName == null) {
-        throw new ApiException(400, "Missing the required parameter 'adminLastName' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'adminEmail' is set
-     if (adminEmail == null) {
-        throw new ApiException(400, "Missing the required parameter 'adminEmail' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'countryCode' is set
-     if (countryCode == null) {
-        throw new ApiException(400, "Missing the required parameter 'countryCode' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'businessIdentifier' is set
-     if (businessIdentifier == null) {
-        throw new ApiException(400, "Missing the required parameter 'businessIdentifier' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'businessCategory' is set
-     if (businessCategory == null) {
-        throw new ApiException(400, "Missing the required parameter 'businessCategory' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'businessName' is set
-     if (businessName == null) {
-        throw new ApiException(400, "Missing the required parameter 'businessName' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'businessPhone' is set
-     if (businessPhone == null) {
-        throw new ApiException(400, "Missing the required parameter 'businessPhone' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'businessAddressLine1' is set
-     if (businessAddressLine1 == null) {
-        throw new ApiException(400, "Missing the required parameter 'businessAddressLine1' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'businessAddressLine2' is set
-     if (businessAddressLine2 == null) {
-        throw new ApiException(400, "Missing the required parameter 'businessAddressLine2' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'businessAddressLine3' is set
-     if (businessAddressLine3 == null) {
-        throw new ApiException(400, "Missing the required parameter 'businessAddressLine3' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'contactFullName' is set
-     if (contactFullName == null) {
-        throw new ApiException(400, "Missing the required parameter 'contactFullName' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'contactJobTitle' is set
-     if (contactJobTitle == null) {
-        throw new ApiException(400, "Missing the required parameter 'contactJobTitle' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'contactEmail' is set
-     if (contactEmail == null) {
-        throw new ApiException(400, "Missing the required parameter 'contactEmail' when calling receiversPost");
-     }
-     
-     // verify the required parameter 'contactPhone' is set
-     if (contactPhone == null) {
-        throw new ApiException(400, "Missing the required parameter 'contactPhone' when calling receiversPost");
-     }
-     
+    // verify the required parameter 'adminFirstName' is set
+    if (adminFirstName == null) {
+      throw new ApiException(400, "Missing the required parameter 'adminFirstName' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'adminLastName' is set
+    if (adminLastName == null) {
+      throw new ApiException(400, "Missing the required parameter 'adminLastName' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'adminEmail' is set
+    if (adminEmail == null) {
+      throw new ApiException(400, "Missing the required parameter 'adminEmail' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'countryCode' is set
+    if (countryCode == null) {
+      throw new ApiException(400, "Missing the required parameter 'countryCode' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'businessIdentifier' is set
+    if (businessIdentifier == null) {
+      throw new ApiException(400, "Missing the required parameter 'businessIdentifier' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'businessCategory' is set
+    if (businessCategory == null) {
+      throw new ApiException(400, "Missing the required parameter 'businessCategory' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'businessName' is set
+    if (businessName == null) {
+      throw new ApiException(400, "Missing the required parameter 'businessName' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'businessPhone' is set
+    if (businessPhone == null) {
+      throw new ApiException(400, "Missing the required parameter 'businessPhone' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'businessAddressLine1' is set
+    if (businessAddressLine1 == null) {
+      throw new ApiException(400, "Missing the required parameter 'businessAddressLine1' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'businessAddressLine2' is set
+    if (businessAddressLine2 == null) {
+      throw new ApiException(400, "Missing the required parameter 'businessAddressLine2' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'businessAddressLine3' is set
+    if (businessAddressLine3 == null) {
+      throw new ApiException(400, "Missing the required parameter 'businessAddressLine3' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'contactFullName' is set
+    if (contactFullName == null) {
+      throw new ApiException(400, "Missing the required parameter 'contactFullName' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'contactJobTitle' is set
+    if (contactJobTitle == null) {
+      throw new ApiException(400, "Missing the required parameter 'contactJobTitle' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'contactEmail' is set
+    if (contactEmail == null) {
+      throw new ApiException(400, "Missing the required parameter 'contactEmail' when calling receiversPost");
+    }
+    
+    // verify the required parameter 'contactPhone' is set
+    if (contactPhone == null) {
+      throw new ApiException(400, "Missing the required parameter 'contactPhone' when calling receiversPost");
+    }
+    
     // create path and map variables
     String path = "/receivers".replaceAll("\\{format\\}","json");
 
@@ -190,15 +189,9 @@ public class ReceiversApi {
     String[] authNames = new String[] { "khipu" };
 
     
-
-    
-    
     TypeRef returnType = new TypeRef<ReceiversCreateResponse>() {};
-    return apiClient.invokeAPI(path, "POST", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
-    
-
-
   }
   
 }

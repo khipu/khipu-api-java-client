@@ -16,7 +16,7 @@ import com.khipu.api.model.SuccessResponse;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-02-01T14:39:50.873-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-07T14:46:41.422-04:00")
 public class PaymentsApi {
   private ApiClient apiClient;
 
@@ -45,13 +45,12 @@ public class PaymentsApi {
    */
   public PaymentsResponse paymentsGet (String notificationToken) throws ApiException {
     Object postBody = null;
-    byte[] postBinaryBody = null;
     
-     // verify the required parameter 'notificationToken' is set
-     if (notificationToken == null) {
-        throw new ApiException(400, "Missing the required parameter 'notificationToken' when calling paymentsGet");
-     }
-     
+    // verify the required parameter 'notificationToken' is set
+    if (notificationToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'notificationToken' when calling paymentsGet");
+    }
+    
     // create path and map variables
     String path = "/payments".replaceAll("\\{format\\}","json");
 
@@ -81,15 +80,9 @@ public class PaymentsApi {
     String[] authNames = new String[] { "khipu" };
 
     
-
-    
-    
     TypeRef returnType = new TypeRef<PaymentsResponse>() {};
-    return apiClient.invokeAPI(path, "GET", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
-    
-
-
   }
   
   /**
@@ -119,23 +112,22 @@ public class PaymentsApi {
    */
   public PaymentsCreateResponse paymentsPost (String subject, String currency, Double amount, String transactionId, String custom, String body, String bankId, String returnUrl, String cancelUrl, String pictureUrl, String notifyUrl, String notifyApiVersion, Date expiresDate, Boolean sendEmail, String payerName, String payerEmail, Boolean sendReminders, String responsibleUserEmail, String fixedPayerPersonalIdentifier, Double integratorFee) throws ApiException {
     Object postBody = null;
-    byte[] postBinaryBody = null;
     
-     // verify the required parameter 'subject' is set
-     if (subject == null) {
-        throw new ApiException(400, "Missing the required parameter 'subject' when calling paymentsPost");
-     }
-     
-     // verify the required parameter 'currency' is set
-     if (currency == null) {
-        throw new ApiException(400, "Missing the required parameter 'currency' when calling paymentsPost");
-     }
-     
-     // verify the required parameter 'amount' is set
-     if (amount == null) {
-        throw new ApiException(400, "Missing the required parameter 'amount' when calling paymentsPost");
-     }
-     
+    // verify the required parameter 'subject' is set
+    if (subject == null) {
+      throw new ApiException(400, "Missing the required parameter 'subject' when calling paymentsPost");
+    }
+    
+    // verify the required parameter 'currency' is set
+    if (currency == null) {
+      throw new ApiException(400, "Missing the required parameter 'currency' when calling paymentsPost");
+    }
+    
+    // verify the required parameter 'amount' is set
+    if (amount == null) {
+      throw new ApiException(400, "Missing the required parameter 'amount' when calling paymentsPost");
+    }
+    
     // create path and map variables
     String path = "/payments".replaceAll("\\{format\\}","json");
 
@@ -203,15 +195,9 @@ public class PaymentsApi {
     String[] authNames = new String[] { "khipu" };
 
     
-
-    
-    
     TypeRef returnType = new TypeRef<PaymentsCreateResponse>() {};
-    return apiClient.invokeAPI(path, "POST", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
-    
-
-
   }
   
   /**
@@ -222,13 +208,12 @@ public class PaymentsApi {
    */
   public PaymentsResponse paymentsIdGet (String id) throws ApiException {
     Object postBody = null;
-    byte[] postBinaryBody = null;
     
-     // verify the required parameter 'id' is set
-     if (id == null) {
-        throw new ApiException(400, "Missing the required parameter 'id' when calling paymentsIdGet");
-     }
-     
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling paymentsIdGet");
+    }
+    
     // create path and map variables
     String path = "/payments/{id}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
@@ -257,15 +242,9 @@ public class PaymentsApi {
     String[] authNames = new String[] { "khipu" };
 
     
-
-    
-    
     TypeRef returnType = new TypeRef<PaymentsResponse>() {};
-    return apiClient.invokeAPI(path, "GET", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
-    
-
-
   }
   
   /**
@@ -276,13 +255,12 @@ public class PaymentsApi {
    */
   public SuccessResponse paymentsIdDelete (String id) throws ApiException {
     Object postBody = null;
-    byte[] postBinaryBody = null;
     
-     // verify the required parameter 'id' is set
-     if (id == null) {
-        throw new ApiException(400, "Missing the required parameter 'id' when calling paymentsIdDelete");
-     }
-     
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling paymentsIdDelete");
+    }
+    
     // create path and map variables
     String path = "/payments/{id}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
@@ -311,15 +289,9 @@ public class PaymentsApi {
     String[] authNames = new String[] { "khipu" };
 
     
-
-    
-    
     TypeRef returnType = new TypeRef<SuccessResponse>() {};
-    return apiClient.invokeAPI(path, "DELETE", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    return apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
-    
-
-
   }
   
   /**
@@ -331,13 +303,12 @@ public class PaymentsApi {
    */
   public SuccessResponse paymentsIdRefundsPost (String id, Double amount) throws ApiException {
     Object postBody = null;
-    byte[] postBinaryBody = null;
     
-     // verify the required parameter 'id' is set
-     if (id == null) {
-        throw new ApiException(400, "Missing the required parameter 'id' when calling paymentsIdRefundsPost");
-     }
-     
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling paymentsIdRefundsPost");
+    }
+    
     // create path and map variables
     String path = "/payments/{id}/refunds".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
@@ -368,15 +339,9 @@ public class PaymentsApi {
     String[] authNames = new String[] { "khipu" };
 
     
-
-    
-    
     TypeRef returnType = new TypeRef<SuccessResponse>() {};
-    return apiClient.invokeAPI(path, "POST", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
-    
-
-
   }
   
 }

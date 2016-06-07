@@ -13,7 +13,7 @@ import com.khipu.api.model.ValidationError;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-02-01T14:39:50.873-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-07T14:46:41.422-04:00")
 public class BanksApi {
   private ApiClient apiClient;
 
@@ -41,7 +41,6 @@ public class BanksApi {
    */
   public BanksResponse banksGet () throws ApiException {
     Object postBody = null;
-    byte[] postBinaryBody = null;
     
     // create path and map variables
     String path = "/banks".replaceAll("\\{format\\}","json");
@@ -70,15 +69,9 @@ public class BanksApi {
     String[] authNames = new String[] { "khipu" };
 
     
-
-    
-    
     TypeRef returnType = new TypeRef<BanksResponse>() {};
-    return apiClient.invokeAPI(path, "GET", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
-    
-
-
   }
   
 }
