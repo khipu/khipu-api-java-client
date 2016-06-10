@@ -13,7 +13,7 @@ import com.khipu.api.model.ValidationError;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-07T14:46:41.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-10T10:13:50.881-04:00")
 public class ReceiversApi {
   private ApiClient apiClient;
 
@@ -52,9 +52,10 @@ public class ReceiversApi {
    * @param contactJobTitle Cargo del contacto del cobrador.
    * @param contactEmail Correo electrónico del contacto del cobrador.
    * @param contactPhone Teléfono del contacto del cobrador.
+   * @param options Mapa de parámetros opcionales
    * @return ReceiversCreateResponse
    */
-  public ReceiversCreateResponse receiversPost (String adminFirstName, String adminLastName, String adminEmail, String countryCode, String businessIdentifier, String businessCategory, String businessName, String businessPhone, String businessAddressLine1, String businessAddressLine2, String businessAddressLine3, String contactFullName, String contactJobTitle, String contactEmail, String contactPhone) throws ApiException {
+  public ReceiversCreateResponse receiversPost (String adminFirstName, String adminLastName, String adminEmail, String countryCode, String businessIdentifier, String businessCategory, String businessName, String businessPhone, String businessAddressLine1, String businessAddressLine2, String businessAddressLine3, String contactFullName, String contactJobTitle, String contactEmail, String contactPhone,  Map<String, Object> options) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'adminFirstName' is set
@@ -142,39 +143,38 @@ public class ReceiversApi {
 
     
 
+    if(options != null) {
+        
+    }
+
+
     
 
-    if (adminFirstName != null)
-      formParams.put("admin_first_name", adminFirstName);
-    if (adminLastName != null)
-      formParams.put("admin_last_name", adminLastName);
-    if (adminEmail != null)
-      formParams.put("admin_email", adminEmail);
-    if (countryCode != null)
-      formParams.put("country_code", countryCode);
-    if (businessIdentifier != null)
-      formParams.put("business_identifier", businessIdentifier);
-    if (businessCategory != null)
-      formParams.put("business_category", businessCategory);
-    if (businessName != null)
-      formParams.put("business_name", businessName);
-    if (businessPhone != null)
-      formParams.put("business_phone", businessPhone);
-    if (businessAddressLine1 != null)
-      formParams.put("business_address_line_1", businessAddressLine1);
-    if (businessAddressLine2 != null)
-      formParams.put("business_address_line_2", businessAddressLine2);
-    if (businessAddressLine3 != null)
-      formParams.put("business_address_line_3", businessAddressLine3);
-    if (contactFullName != null)
-      formParams.put("contact_full_name", contactFullName);
-    if (contactJobTitle != null)
-      formParams.put("contact_job_title", contactJobTitle);
-    if (contactEmail != null)
-      formParams.put("contact_email", contactEmail);
-    if (contactPhone != null)
-      formParams.put("contact_phone", contactPhone);
+    if(options != null) {
+        
+    }
+
+
+    formParams.put("admin_first_name", adminFirstName);
+    formParams.put("admin_last_name", adminLastName);
+    formParams.put("admin_email", adminEmail);
+    formParams.put("country_code", countryCode);
+    formParams.put("business_identifier", businessIdentifier);
+    formParams.put("business_category", businessCategory);
+    formParams.put("business_name", businessName);
+    formParams.put("business_phone", businessPhone);
+    formParams.put("business_address_line_1", businessAddressLine1);
+    formParams.put("business_address_line_2", businessAddressLine2);
+    formParams.put("business_address_line_3", businessAddressLine3);
+    formParams.put("contact_full_name", contactFullName);
+    formParams.put("contact_job_title", contactJobTitle);
+    formParams.put("contact_email", contactEmail);
+    formParams.put("contact_phone", contactPhone);
     
+
+    if(options != null) {
+      
+    }
 
     final String[] accepts = {
       "application/json"
@@ -194,4 +194,33 @@ public class ReceiversApi {
     
   }
   
+
+
+  
+  /**
+  * Crear una nueva cuenta de cobro
+  * Crear una nueva cuenta de cobro asociada a un integrador. Necesita datos de la cuenta de usuario asociada, datos de facturación y datos de contacto.
+  * @param adminFirstName Nombre de pila del administrador de la cuenta de cobro a crear.
+  * @param adminLastName Apellido del administrador de la cuenta de cobro a crear.
+  * @param adminEmail Correo electrónico del administrador de la cuenta de cobro a crear.
+  * @param countryCode Código alfanumérico de dos caractéres ISO 3166-1 del país de la cuenta de cobro a crear.
+  * @param businessIdentifier Identificador tributario del cobrador asociado a la cuenta de cobro a crear.
+  * @param businessCategory Categoría tributaria o rubro tributario del cobrador asociado a la cuenta de cobro a crear.
+  * @param businessName Nombre tributario del cobrador asociado a la cuenta de cobro a crear.
+  * @param businessPhone Teléfono del cobrador asociado a la cuenta de cobro a crear.
+  * @param businessAddressLine1 Dirección del cobrador de la cuenta de cobro a crear.
+  * @param businessAddressLine2 Segunda línea de la dirección del cobrador de la cuenta de cobro a crear.
+  * @param businessAddressLine3 Tercera línea de la dirección del cobrador de la cuenta de cobro a crear.
+  * @param contactFullName Nombre del contacto del cobrador.
+  * @param contactJobTitle Cargo del contacto del cobrador.
+  * @param contactEmail Correo electrónico del contacto del cobrador.
+  * @param contactPhone Teléfono del contacto del cobrador.
+  * @return ReceiversCreateResponse
+  */
+  public ReceiversCreateResponse receiversPost (String adminFirstName, String adminLastName, String adminEmail, String countryCode, String businessIdentifier, String businessCategory, String businessName, String businessPhone, String businessAddressLine1, String businessAddressLine2, String businessAddressLine3, String contactFullName, String contactJobTitle, String contactEmail, String contactPhone) throws ApiException {
+    return receiversPost(adminFirstName, adminLastName, adminEmail, countryCode, businessIdentifier, businessCategory, businessName, businessPhone, businessAddressLine1, businessAddressLine2, businessAddressLine3, contactFullName, contactJobTitle, contactEmail, contactPhone, null);
+    
+  }
+  
+
 }

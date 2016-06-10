@@ -13,7 +13,7 @@ import com.khipu.api.model.ValidationError;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-07T14:46:41.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-10T10:13:50.881-04:00")
 public class BanksApi {
   private ApiClient apiClient;
 
@@ -37,9 +37,10 @@ public class BanksApi {
   /**
    * Obtener listado de bancos
    * Obtiene el listado de bancos que pueden usarse para pagar a esta cuenta de cobro.
+   * @param options Mapa de parámetros opcionales
    * @return BanksResponse
    */
-  public BanksResponse banksGet () throws ApiException {
+  public BanksResponse banksGet ( Map<String, Object> options) throws ApiException {
     Object postBody = null;
     
     // create path and map variables
@@ -52,9 +53,23 @@ public class BanksApi {
 
     
 
-    
+    if(options != null) {
+        
+    }
+
 
     
+
+    if(options != null) {
+        
+    }
+
+
+    
+
+    if(options != null) {
+      
+    }
 
     final String[] accepts = {
       "application/json"
@@ -74,4 +89,18 @@ public class BanksApi {
     
   }
   
+
+
+  
+  /**
+  * Obtener listado de bancos
+  * Obtiene el listado de bancos que pueden usarse para pagar a esta cuenta de cobro.
+  * @return BanksResponse
+  */
+  public BanksResponse banksGet () throws ApiException {
+    return banksGet(null);
+    
+  }
+  
+
 }

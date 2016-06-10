@@ -16,7 +16,7 @@ import com.khipu.api.model.SuccessResponse;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-07T14:46:41.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-10T10:13:50.881-04:00")
 public class PaymentsApi {
   private ApiClient apiClient;
 
@@ -41,9 +41,10 @@ public class PaymentsApi {
    * Obtener información de un pago
    * Información completa del pago. Datos con los que fue creado y el estado actual del pago. Se obtiene del notification_token que envia khipu cuando el pago es conciliado.
    * @param notificationToken Token de notifiación recibido usando la API de notificaiones 1.3 o superior.
+   * @param options Mapa de parámetros opcionales
    * @return PaymentsResponse
    */
-  public PaymentsResponse paymentsGet (String notificationToken) throws ApiException {
+  public PaymentsResponse paymentsGet (String notificationToken,  Map<String, Object> options) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'notificationToken' is set
@@ -63,9 +64,23 @@ public class PaymentsApi {
     queryParams.addAll(apiClient.parameterToPairs("", "notification_token", notificationToken));
     
 
-    
+    if(options != null) {
+        
+    }
+
 
     
+
+    if(options != null) {
+        
+    }
+
+
+    
+
+    if(options != null) {
+      
+    }
 
     final String[] accepts = {
       "application/json"
@@ -91,26 +106,28 @@ public class PaymentsApi {
    * @param subject Motivo
    * @param currency El código de moneda en formato ISO-4217
    * @param amount El monto del cobro. Sin separador de miles y usando &#39;.&#39; como separador de decimales. Hasta 4 lugares decimales, dependiendo de la moneda
-   * @param transactionId Identificador propio de la  transacción. Ej: número de factura u orden de compra
-   * @param custom Parámetro para enviar información personalizada de la transacción. Ej: documento XML con el detalle del carro de compra
-   * @param body Descripción del cobro
-   * @param bankId Identificador del banco para usar en el pago
-   * @param returnUrl La dirección URL a donde enviar al cliente mientras el pago está siendo verificado
-   * @param cancelUrl La dirección URL a donde enviar al cliente si decide no hacer hacer la transacción
-   * @param pictureUrl Una dirección URL de una foto de tu producto o servicio
-   * @param notifyUrl La dirección del web-service que utilizará khipu para notificar cuando el pago esté conciliado
-   * @param notifyApiVersion Versión de la API de notifiaciones para recibir avisos por web-service
-   * @param expiresDate Fecha de expiración del cobro. Pasada esta fecha el cobro es inválido. Formato ISO-8601. Ej: 2017-03-01T13:00:00Z
-   * @param sendEmail Si es &#39;true&#39;, se enviará una solicitud de cobro al correo especificado en &#39;payer_email&#39;
-   * @param payerName Nombre del pagador. Es obligatorio cuando send_email es &#39;true&#39;
-   * @param payerEmail Correo del pagador. Es obligatorio cuando send_email es &#39;true&#39;
-   * @param sendReminders Si es &#39;true&#39;, se enviarán recordatorios de cobro.
-   * @param responsibleUserEmail Correo electrónico del responsable de este cobro, debe corresponder a un usuario khipu con permisos para cobrar usando esta cuenta de cobro
-   * @param fixedPayerPersonalIdentifier Identificador personal. Si se especifica, solo podrá ser pagado usando ese identificador
-   * @param integratorFee Comisión para el integrador. Sólo es válido si la cuenta de cobro tiene una cuenta de integrador asociada
+   * @param options Mapa de parámetros opcionales
+   * - transactionId Identificador propio de la  transacción. Ej: número de factura u orden de compra
+   * - custom Parámetro para enviar información personalizada de la transacción. Ej: documento XML con el detalle del carro de compra
+   * - body Descripción del cobro
+   * - bankId Identificador del banco para usar en el pago
+   * - returnUrl La dirección URL a donde enviar al cliente mientras el pago está siendo verificado
+   * - cancelUrl La dirección URL a donde enviar al cliente si decide no hacer hacer la transacción
+   * - pictureUrl Una dirección URL de una foto de tu producto o servicio
+   * - notifyUrl La dirección del web-service que utilizará khipu para notificar cuando el pago esté conciliado
+   * - contractUrl La dirección URL del archivo PDF con el contrato a firmar mediante este pago. El cobrador debe estar habilitado para este servicio y el campo &#39;fixed_payer_personal_identifier&#39; es obgligatorio
+   * - notifyApiVersion Versión de la API de notifiaciones para recibir avisos por web-service
+   * - expiresDate Fecha de expiración del cobro. Pasada esta fecha el cobro es inválido. Formato ISO-8601. Ej: 2017-03-01T13:00:00Z
+   * - sendEmail Si es &#39;true&#39;, se enviará una solicitud de cobro al correo especificado en &#39;payer_email&#39;
+   * - payerName Nombre del pagador. Es obligatorio cuando send_email es &#39;true&#39;
+   * - payerEmail Correo del pagador. Es obligatorio cuando send_email es &#39;true&#39;
+   * - sendReminders Si es &#39;true&#39;, se enviarán recordatorios de cobro.
+   * - responsibleUserEmail Correo electrónico del responsable de este cobro, debe corresponder a un usuario khipu con permisos para cobrar usando esta cuenta de cobro
+   * - fixedPayerPersonalIdentifier Identificador personal. Si se especifica, solo podrá ser pagado usando ese identificador
+   * - integratorFee Comisión para el integrador. Sólo es válido si la cuenta de cobro tiene una cuenta de integrador asociada
    * @return PaymentsCreateResponse
    */
-  public PaymentsCreateResponse paymentsPost (String subject, String currency, Double amount, String transactionId, String custom, String body, String bankId, String returnUrl, String cancelUrl, String pictureUrl, String notifyUrl, String notifyApiVersion, Date expiresDate, Boolean sendEmail, String payerName, String payerEmail, Boolean sendReminders, String responsibleUserEmail, String fixedPayerPersonalIdentifier, Double integratorFee) throws ApiException {
+  public PaymentsCreateResponse paymentsPost (String subject, String currency, Double amount,  Map<String, Object> options) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'subject' is set
@@ -138,49 +155,80 @@ public class PaymentsApi {
 
     
 
+    if(options != null) {
+        
+    }
+
+
     
 
-    if (subject != null)
-      formParams.put("subject", subject);
-    if (currency != null)
-      formParams.put("currency", currency);
-    if (amount != null)
-      formParams.put("amount", amount);
-    if (transactionId != null)
-      formParams.put("transaction_id", transactionId);
-    if (custom != null)
-      formParams.put("custom", custom);
-    if (body != null)
-      formParams.put("body", body);
-    if (bankId != null)
-      formParams.put("bank_id", bankId);
-    if (returnUrl != null)
-      formParams.put("return_url", returnUrl);
-    if (cancelUrl != null)
-      formParams.put("cancel_url", cancelUrl);
-    if (pictureUrl != null)
-      formParams.put("picture_url", pictureUrl);
-    if (notifyUrl != null)
-      formParams.put("notify_url", notifyUrl);
-    if (notifyApiVersion != null)
-      formParams.put("notify_api_version", notifyApiVersion);
-    if (expiresDate != null)
-      formParams.put("expires_date", expiresDate);
-    if (sendEmail != null)
-      formParams.put("send_email", sendEmail);
-    if (payerName != null)
-      formParams.put("payer_name", payerName);
-    if (payerEmail != null)
-      formParams.put("payer_email", payerEmail);
-    if (sendReminders != null)
-      formParams.put("send_reminders", sendReminders);
-    if (responsibleUserEmail != null)
-      formParams.put("responsible_user_email", responsibleUserEmail);
-    if (fixedPayerPersonalIdentifier != null)
-      formParams.put("fixed_payer_personal_identifier", fixedPayerPersonalIdentifier);
-    if (integratorFee != null)
-      formParams.put("integrator_fee", integratorFee);
+    if(options != null) {
+        
+    }
+
+
+    formParams.put("subject", subject);
+    formParams.put("currency", currency);
+    formParams.put("amount", amount);
     
+
+    if(options != null) {
+      if(options.containsKey("transactionId") && options.get("transactionId") != null)
+        formParams.put("transaction_id", options.get("transactionId"));
+
+      if(options.containsKey("custom") && options.get("custom") != null)
+        formParams.put("custom", options.get("custom"));
+
+      if(options.containsKey("body") && options.get("body") != null)
+        formParams.put("body", options.get("body"));
+
+      if(options.containsKey("bankId") && options.get("bankId") != null)
+        formParams.put("bank_id", options.get("bankId"));
+
+      if(options.containsKey("returnUrl") && options.get("returnUrl") != null)
+        formParams.put("return_url", options.get("returnUrl"));
+
+      if(options.containsKey("cancelUrl") && options.get("cancelUrl") != null)
+        formParams.put("cancel_url", options.get("cancelUrl"));
+
+      if(options.containsKey("pictureUrl") && options.get("pictureUrl") != null)
+        formParams.put("picture_url", options.get("pictureUrl"));
+
+      if(options.containsKey("notifyUrl") && options.get("notifyUrl") != null)
+        formParams.put("notify_url", options.get("notifyUrl"));
+
+      if(options.containsKey("contractUrl") && options.get("contractUrl") != null)
+        formParams.put("contract_url", options.get("contractUrl"));
+
+      if(options.containsKey("notifyApiVersion") && options.get("notifyApiVersion") != null)
+        formParams.put("notify_api_version", options.get("notifyApiVersion"));
+
+      if(options.containsKey("expiresDate") && options.get("expiresDate") != null)
+        formParams.put("expires_date", options.get("expiresDate"));
+
+      if(options.containsKey("sendEmail") && options.get("sendEmail") != null)
+        formParams.put("send_email", options.get("sendEmail"));
+
+      if(options.containsKey("payerName") && options.get("payerName") != null)
+        formParams.put("payer_name", options.get("payerName"));
+
+      if(options.containsKey("payerEmail") && options.get("payerEmail") != null)
+        formParams.put("payer_email", options.get("payerEmail"));
+
+      if(options.containsKey("sendReminders") && options.get("sendReminders") != null)
+        formParams.put("send_reminders", options.get("sendReminders"));
+
+      if(options.containsKey("responsibleUserEmail") && options.get("responsibleUserEmail") != null)
+        formParams.put("responsible_user_email", options.get("responsibleUserEmail"));
+
+      if(options.containsKey("fixedPayerPersonalIdentifier") && options.get("fixedPayerPersonalIdentifier") != null)
+        formParams.put("fixed_payer_personal_identifier", options.get("fixedPayerPersonalIdentifier"));
+
+      if(options.containsKey("integratorFee") && options.get("integratorFee") != null)
+        formParams.put("integrator_fee", options.get("integratorFee"));
+
+      
+    }
 
     final String[] accepts = {
       "application/json"
@@ -204,9 +252,10 @@ public class PaymentsApi {
    * Obtener información de un pago
    * Información completa del pago. Datos con los que fue creado y el estado actual del pago.
    * @param id Identificador del pago
+   * @param options Mapa de parámetros opcionales
    * @return PaymentsResponse
    */
-  public PaymentsResponse paymentsIdGet (String id) throws ApiException {
+  public PaymentsResponse paymentsIdGet (String id,  Map<String, Object> options) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'id' is set
@@ -225,9 +274,23 @@ public class PaymentsApi {
 
     
 
-    
+    if(options != null) {
+        
+    }
+
 
     
+
+    if(options != null) {
+        
+    }
+
+
+    
+
+    if(options != null) {
+      
+    }
 
     final String[] accepts = {
       "application/json"
@@ -251,9 +314,10 @@ public class PaymentsApi {
    * Borrar un pago
    * Solo se pueden borrar pagos que estén pendientes de pagar. Esta operación no puede deshacerse.
    * @param id Identificador del pago
+   * @param options Mapa de parámetros opcionales
    * @return SuccessResponse
    */
-  public SuccessResponse paymentsIdDelete (String id) throws ApiException {
+  public SuccessResponse paymentsIdDelete (String id,  Map<String, Object> options) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'id' is set
@@ -272,9 +336,23 @@ public class PaymentsApi {
 
     
 
-    
+    if(options != null) {
+        
+    }
+
 
     
+
+    if(options != null) {
+        
+    }
+
+
+    
+
+    if(options != null) {
+      
+    }
 
     final String[] accepts = {
       "application/json"
@@ -298,10 +376,11 @@ public class PaymentsApi {
    * Reembolsar total o parcialmente un pago
    * Reembolsa total o parcialmente el monto de un pago. Esta operación solo se puede realizar en los comercios que recauden en cuenta khipu y antes de la rendición de los fondos correspondientes.
    * @param id Identificador del pago
-   * @param amount El monto a devolver. Sin separador de miles y usando &#39;.&#39; como separador de decimales. Hasta 4 lugares decimales, dependiendo de la moneda. Si se omite el reembolso se hará por el total del monto del pago.
+   * @param options Mapa de parámetros opcionales
+   * - amount El monto a devolver. Sin separador de miles y usando &#39;.&#39; como separador de decimales. Hasta 4 lugares decimales, dependiendo de la moneda. Si se omite el reembolso se hará por el total del monto del pago.
    * @return SuccessResponse
    */
-  public SuccessResponse paymentsIdRefundsPost (String id, Double amount) throws ApiException {
+  public SuccessResponse paymentsIdRefundsPost (String id,  Map<String, Object> options) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'id' is set
@@ -320,11 +399,26 @@ public class PaymentsApi {
 
     
 
+    if(options != null) {
+        
+    }
+
+
     
 
-    if (amount != null)
-      formParams.put("amount", amount);
+    if(options != null) {
+        
+    }
+
+
     
+
+    if(options != null) {
+      if(options.containsKey("amount") && options.get("amount") != null)
+        formParams.put("amount", options.get("amount"));
+
+      
+    }
 
     final String[] accepts = {
       "application/json"
@@ -344,4 +438,65 @@ public class PaymentsApi {
     
   }
   
+
+
+  
+  /**
+  * Obtener información de un pago
+  * Información completa del pago. Datos con los que fue creado y el estado actual del pago. Se obtiene del notification_token que envia khipu cuando el pago es conciliado.
+  * @param notificationToken Token de notifiación recibido usando la API de notificaiones 1.3 o superior.
+  * @return PaymentsResponse
+  */
+  public PaymentsResponse paymentsGet (String notificationToken) throws ApiException {
+    return paymentsGet(notificationToken, null);
+    
+  }
+  
+  /**
+  * Crear un pago
+  * Crea un pago en khipu y obtiene las URLs para redirección al usuario para que complete el pago.
+  * @param subject Motivo
+  * @param currency El código de moneda en formato ISO-4217
+  * @param amount El monto del cobro. Sin separador de miles y usando &#39;.&#39; como separador de decimales. Hasta 4 lugares decimales, dependiendo de la moneda
+  * @return PaymentsCreateResponse
+  */
+  public PaymentsCreateResponse paymentsPost (String subject, String currency, Double amount) throws ApiException {
+    return paymentsPost(subject, currency, amount, null);
+    
+  }
+  
+  /**
+  * Obtener información de un pago
+  * Información completa del pago. Datos con los que fue creado y el estado actual del pago.
+  * @param id Identificador del pago
+  * @return PaymentsResponse
+  */
+  public PaymentsResponse paymentsIdGet (String id) throws ApiException {
+    return paymentsIdGet(id, null);
+    
+  }
+  
+  /**
+  * Borrar un pago
+  * Solo se pueden borrar pagos que estén pendientes de pagar. Esta operación no puede deshacerse.
+  * @param id Identificador del pago
+  * @return SuccessResponse
+  */
+  public SuccessResponse paymentsIdDelete (String id) throws ApiException {
+    return paymentsIdDelete(id, null);
+    
+  }
+  
+  /**
+  * Reembolsar total o parcialmente un pago
+  * Reembolsa total o parcialmente el monto de un pago. Esta operación solo se puede realizar en los comercios que recauden en cuenta khipu y antes de la rendición de los fondos correspondientes.
+  * @param id Identificador del pago
+  * @return SuccessResponse
+  */
+  public SuccessResponse paymentsIdRefundsPost (String id) throws ApiException {
+    return paymentsIdRefundsPost(id, null);
+    
+  }
+  
+
 }
