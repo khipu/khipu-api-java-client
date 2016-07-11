@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-10T10:13:50.881-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-11T14:54:34.635-04:00")
 public class PaymentsCreateResponse   {
   
   private String paymentId = null;
@@ -21,8 +21,9 @@ public class PaymentsCreateResponse   {
 
   
   /**
+   * Identificador único del pago, es una cadena alfanumérica de 12 caracteres
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identificador único del pago, es una cadena alfanumérica de 12 caracteres")
   @JsonProperty("payment_id")
   public String getPaymentId() {
     return paymentId;
@@ -33,8 +34,9 @@ public class PaymentsCreateResponse   {
 
   
   /**
+   * URL principal del pago, si el usuario no ha elegido previamente un método de pago se le muestran las opciones
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL principal del pago, si el usuario no ha elegido previamente un método de pago se le muestran las opciones")
   @JsonProperty("payment_url")
   public String getPaymentUrl() {
     return paymentUrl;
@@ -45,8 +47,9 @@ public class PaymentsCreateResponse   {
 
   
   /**
+   * URL de pago simplificado
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL de pago simplificado")
   @JsonProperty("simplified_transfer_url")
   public String getSimplifiedTransferUrl() {
     return simplifiedTransferUrl;
@@ -57,8 +60,9 @@ public class PaymentsCreateResponse   {
 
   
   /**
+   * URL de pago normal
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL de pago normal")
   @JsonProperty("transfer_url")
   public String getTransferUrl() {
     return transferUrl;
@@ -69,8 +73,9 @@ public class PaymentsCreateResponse   {
 
   
   /**
+   * URL para invocar el pago desde un dispositivo móvil usando la APP de khipu
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL para invocar el pago desde un dispositivo móvil usando la APP de khipu")
   @JsonProperty("app_url")
   public String getAppUrl() {
     return appUrl;
@@ -81,8 +86,9 @@ public class PaymentsCreateResponse   {
 
   
   /**
+   * Es 'true' si el pago ya cuenta con todos los datos necesarios para abrir directamente la aplicación de pagos khipu
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Es 'true' si el pago ya cuenta con todos los datos necesarios para abrir directamente la aplicación de pagos khipu")
   @JsonProperty("ready_for_terminal")
   public Boolean getReadyForTerminal() {
     return readyForTerminal;

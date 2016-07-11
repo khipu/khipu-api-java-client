@@ -13,7 +13,7 @@ import com.khipu.api.model.ValidationError;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-10T10:13:50.881-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-11T14:54:34.635-04:00")
 public class ReceiversApi {
   private ApiClient apiClient;
 

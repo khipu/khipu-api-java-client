@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-10T10:13:50.881-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-11T14:54:34.635-04:00")
 public class ErrorItem   {
   
   private String field = null;
@@ -17,8 +17,9 @@ public class ErrorItem   {
 
   
   /**
+   * Campo que tiene el error de validación
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Campo que tiene el error de validación")
   @JsonProperty("field")
   public String getField() {
     return field;
@@ -29,8 +30,9 @@ public class ErrorItem   {
 
   
   /**
+   * Motivo del error de validación
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Motivo del error de validación")
   @JsonProperty("message")
   public String getMessage() {
     return message;

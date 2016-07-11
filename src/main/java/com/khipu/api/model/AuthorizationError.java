@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-10T10:13:50.881-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-11T14:54:34.635-04:00")
 public class AuthorizationError   {
   
   private Integer status = null;
@@ -17,8 +17,9 @@ public class AuthorizationError   {
 
   
   /**
+   * Código del error
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Código del error")
   @JsonProperty("status")
   public Integer getStatus() {
     return status;
@@ -29,8 +30,9 @@ public class AuthorizationError   {
 
   
   /**
+   * Mensaje del error
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Mensaje del error")
   @JsonProperty("message")
   public String getMessage() {
     return message;

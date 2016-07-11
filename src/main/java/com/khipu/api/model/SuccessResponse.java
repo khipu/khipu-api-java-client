@@ -9,15 +9,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-10T10:13:50.881-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-11T14:54:34.635-04:00")
 public class SuccessResponse   {
   
   private String message = null;
 
   
   /**
+   * Mensaje a desplegar al usuario
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Mensaje a desplegar al usuario")
   @JsonProperty("message")
   public String getMessage() {
     return message;

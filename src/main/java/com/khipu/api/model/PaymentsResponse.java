@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-10T10:13:50.881-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-11T14:54:34.635-04:00")
 public class PaymentsResponse   {
   
   private String paymentId = null;
@@ -49,11 +49,13 @@ public class PaymentsResponse   {
   private String responsibleUserEmail = null;
   private Boolean sendReminders = null;
   private Boolean sendEmail = null;
+  private String paymentMethod = null;
 
   
   /**
+   * Identificador único del pago, es una cadena alfanumérica de 12 caracteres
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identificador único del pago, es una cadena alfanumérica de 12 caracteres")
   @JsonProperty("payment_id")
   public String getPaymentId() {
     return paymentId;
@@ -64,8 +66,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * URL principal del pago, si el usuario no ha elegido previamente un método de pago se le muestran las opciones
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL principal del pago, si el usuario no ha elegido previamente un método de pago se le muestran las opciones")
   @JsonProperty("payment_url")
   public String getPaymentUrl() {
     return paymentUrl;
@@ -76,8 +79,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * URL de pago simplificado
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL de pago simplificado")
   @JsonProperty("simplified_transfer_url")
   public String getSimplifiedTransferUrl() {
     return simplifiedTransferUrl;
@@ -88,8 +92,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * URL de pago normal
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL de pago normal")
   @JsonProperty("transfer_url")
   public String getTransferUrl() {
     return transferUrl;
@@ -100,8 +105,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * URL para invocar el pago desde un dispositivo móvil usando la APP de khipu
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL para invocar el pago desde un dispositivo móvil usando la APP de khipu")
   @JsonProperty("app_url")
   public String getAppUrl() {
     return appUrl;
@@ -112,8 +118,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Es 'true' si el pago ya cuenta con todos los datos necesarios para abrir directamente la aplicación de pagos khipu
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Es 'true' si el pago ya cuenta con todos los datos necesarios para abrir directamente la aplicación de pagos khipu")
   @JsonProperty("ready_for_terminal")
   public Boolean getReadyForTerminal() {
     return readyForTerminal;
@@ -124,8 +131,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Cadena de caracteres alfanuméricos que identifican unicamente al pago, es el identificador que el servidor de khipu enviará al servidor del comercio cuando notifique que un pago está conciliado
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Cadena de caracteres alfanuméricos que identifican unicamente al pago, es el identificador que el servidor de khipu enviará al servidor del comercio cuando notifique que un pago está conciliado")
   @JsonProperty("notification_token")
   public String getNotificationToken() {
     return notificationToken;
@@ -136,8 +144,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Identificador único de una cuenta de cobro
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identificador único de una cuenta de cobro")
   @JsonProperty("receiver_id")
   public Long getReceiverId() {
     return receiverId;
@@ -148,8 +157,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Fecha y hora de conciliación del pago. Formato ISO-8601. Ej: 2017-03-01T13:00:00Z
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Fecha y hora de conciliación del pago. Formato ISO-8601. Ej: 2017-03-01T13:00:00Z")
   @JsonProperty("conciliation_date")
   public Date getConciliationDate() {
     return conciliationDate;
@@ -160,8 +170,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Motivo del pago
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Motivo del pago")
   @JsonProperty("subject")
   public String getSubject() {
     return subject;
@@ -184,8 +195,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * El código de moneda en formato ISO-4217
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "El código de moneda en formato ISO-4217")
   @JsonProperty("currency")
   public String getCurrency() {
     return currency;
@@ -196,8 +208,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Estado del pago, puede ser 'pending' (el pagador aún no comienza a pagar), 'verifying' (se está verificando el pago) o 'done', cuando el pago ya está confirmado
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Estado del pago, puede ser 'pending' (el pagador aún no comienza a pagar), 'verifying' (se está verificando el pago) o 'done', cuando el pago ya está confirmado")
   @JsonProperty("status")
   public String getStatus() {
     return status;
@@ -208,8 +221,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Detalle del estado del pago, 'pending' (el pagadon aún no comienza a pagar), 'normal' (el pago fue verificado y fue cancelado por algún medio de pago estandar), 'marked-paid-by-receiver' (el cobrador marco el cobro como pagado por otro medio), 'rejected-by-payer' (el pagador declaró que no pagará), 'marked-as-abuse' (el pagador declaró que no pagará y que el cobro fue no solicitado) y 'reversed' (el pago fue anulado por el comercio, el dinero fue devuelto al pagador).
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Detalle del estado del pago, 'pending' (el pagadon aún no comienza a pagar), 'normal' (el pago fue verificado y fue cancelado por algún medio de pago estandar), 'marked-paid-by-receiver' (el cobrador marco el cobro como pagado por otro medio), 'rejected-by-payer' (el pagador declaró que no pagará), 'marked-as-abuse' (el pagador declaró que no pagará y que el cobro fue no solicitado) y 'reversed' (el pago fue anulado por el comercio, el dinero fue devuelto al pagador).")
   @JsonProperty("status_detail")
   public String getStatusDetail() {
     return statusDetail;
@@ -220,8 +234,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Detalle del cobro
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Detalle del cobro")
   @JsonProperty("body")
   public String getBody() {
     return body;
@@ -232,8 +247,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * URL de cobro
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL de cobro")
   @JsonProperty("picture_url")
   public String getPictureUrl() {
     return pictureUrl;
@@ -244,8 +260,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * URL del comprobante de pago
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL del comprobante de pago")
   @JsonProperty("receipt_url")
   public String getReceiptUrl() {
     return receiptUrl;
@@ -256,8 +273,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * URL donde se redirige al pagador luego que termina el pago
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL donde se redirige al pagador luego que termina el pago")
   @JsonProperty("return_url")
   public String getReturnUrl() {
     return returnUrl;
@@ -268,8 +286,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * URL donde se redirige al pagador luego de que desiste hacer el pago
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL donde se redirige al pagador luego de que desiste hacer el pago")
   @JsonProperty("cancel_url")
   public String getCancelUrl() {
     return cancelUrl;
@@ -280,8 +299,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * URL del webservice donde se notificará el pago
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URL del webservice donde se notificará el pago")
   @JsonProperty("notify_url")
   public String getNotifyUrl() {
     return notifyUrl;
@@ -292,8 +312,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Versión de la api de notificación
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Versión de la api de notificación")
   @JsonProperty("notify_api_version")
   public String getNotifyApiVersion() {
     return notifyApiVersion;
@@ -304,8 +325,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Fecha de expiración del pago. En formato ISO-8601
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Fecha de expiración del pago. En formato ISO-8601")
   @JsonProperty("expires_date")
   public Date getExpiresDate() {
     return expiresDate;
@@ -316,8 +338,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * URLs de archivos adjuntos al pago
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "URLs de archivos adjuntos al pago")
   @JsonProperty("attachment_urls")
   public List<String> getAttachmentUrls() {
     return attachmentUrls;
@@ -328,8 +351,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Nombre del banco seleccionado por el pagador
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Nombre del banco seleccionado por el pagador")
   @JsonProperty("bank")
   public String getBank() {
     return bank;
@@ -340,8 +364,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Identificador del banco seleccionado por el pagador
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identificador del banco seleccionado por el pagador")
   @JsonProperty("bank_id")
   public String getBankId() {
     return bankId;
@@ -352,8 +377,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Nombre del pagador
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Nombre del pagador")
   @JsonProperty("payer_name")
   public String getPayerName() {
     return payerName;
@@ -364,8 +390,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Correo electrónico del pagador
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Correo electrónico del pagador")
   @JsonProperty("payer_email")
   public String getPayerEmail() {
     return payerEmail;
@@ -376,8 +403,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Identificador personal del pagador
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identificador personal del pagador")
   @JsonProperty("personal_identifier")
   public String getPersonalIdentifier() {
     return personalIdentifier;
@@ -388,8 +416,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Número de cuenta bancaria del pagador
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Número de cuenta bancaria del pagador")
   @JsonProperty("bank_account_number")
   public String getBankAccountNumber() {
     return bankAccountNumber;
@@ -400,8 +429,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Es 'true' si la conciliación del pago fue hecha luego de la fecha de expiración
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Es 'true' si la conciliación del pago fue hecha luego de la fecha de expiración")
   @JsonProperty("out_of_date_conciliation")
   public Boolean getOutOfDateConciliation() {
     return outOfDateConciliation;
@@ -412,8 +442,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Identificador del pago asignado por el cobrador
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identificador del pago asignado por el cobrador")
   @JsonProperty("transaction_id")
   public String getTransactionId() {
     return transactionId;
@@ -424,8 +455,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Campo genérico que asigna el cobrador al momento de hacer el pago
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Campo genérico que asigna el cobrador al momento de hacer el pago")
   @JsonProperty("custom")
   public String getCustom() {
     return custom;
@@ -436,8 +468,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Correo electrónico de la persona responsable del pago
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Correo electrónico de la persona responsable del pago")
   @JsonProperty("responsible_user_email")
   public String getResponsibleUserEmail() {
     return responsibleUserEmail;
@@ -448,8 +481,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Es 'true' cuando este es un cobro por correo electrónico y khipu enviará recordatorios
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Es 'true' cuando este es un cobro por correo electrónico y khipu enviará recordatorios")
   @JsonProperty("send_reminders")
   public Boolean getSendReminders() {
     return sendReminders;
@@ -460,14 +494,28 @@ public class PaymentsResponse   {
 
   
   /**
+   * Es 'true' cuando khipu enviará el cobro por correo electrónico
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Es 'true' cuando khipu enviará el cobro por correo electrónico")
   @JsonProperty("send_email")
   public Boolean getSendEmail() {
     return sendEmail;
   }
   public void setSendEmail(Boolean sendEmail) {
     this.sendEmail = sendEmail;
+  }
+
+  
+  /**
+   * Método de pago usado por el pagador, puede ser 'regular_transfer' (transferencia normal), 'simplified_transfer' (transferencia simplificada) o 'not_available' (para un pago marcado como realizado por otro medio por el cobrador).
+   **/
+  @ApiModelProperty(value = "Método de pago usado por el pagador, puede ser 'regular_transfer' (transferencia normal), 'simplified_transfer' (transferencia simplificada) o 'not_available' (para un pago marcado como realizado por otro medio por el cobrador).")
+  @JsonProperty("payment_method")
+  public String getPaymentMethod() {
+    return paymentMethod;
+  }
+  public void setPaymentMethod(String paymentMethod) {
+    this.paymentMethod = paymentMethod;
   }
 
   
@@ -512,6 +560,7 @@ public class PaymentsResponse   {
     sb.append("    responsibleUserEmail: ").append(StringUtil.toIndentedString(responsibleUserEmail)).append("\n");
     sb.append("    sendReminders: ").append(StringUtil.toIndentedString(sendReminders)).append("\n");
     sb.append("    sendEmail: ").append(StringUtil.toIndentedString(sendEmail)).append("\n");
+    sb.append("    paymentMethod: ").append(StringUtil.toIndentedString(paymentMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

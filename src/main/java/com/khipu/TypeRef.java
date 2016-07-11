@@ -3,7 +3,7 @@ package com.khipu;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-10T10:13:50.881-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-11T14:54:34.635-04:00")
 public class TypeRef<T> {
     private final Type type;
 

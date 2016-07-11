@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-06-10T10:13:50.881-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-11T14:54:34.635-04:00")
 public class BankItem   {
   
   private String bankId = null;
@@ -21,8 +21,9 @@ public class BankItem   {
 
   
   /**
+   * Identificador del banco
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identificador del banco")
   @JsonProperty("bank_id")
   public String getBankId() {
     return bankId;
@@ -33,8 +34,9 @@ public class BankItem   {
 
   
   /**
+   * Nombre del banco
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Nombre del banco")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -45,8 +47,9 @@ public class BankItem   {
 
   
   /**
+   * Mensaje con particularidades del banco
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Mensaje con particularidades del banco")
   @JsonProperty("message")
   public String getMessage() {
     return message;
@@ -57,8 +60,9 @@ public class BankItem   {
 
   
   /**
+   * Monto mínimo que acepta el banco en un pago
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Monto mínimo que acepta el banco en un pago")
   @JsonProperty("min_amount")
   public Double getMinAmount() {
     return minAmount;
@@ -69,8 +73,9 @@ public class BankItem   {
 
   
   /**
+   * Tipo de banco
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Tipo de banco")
   @JsonProperty("type")
   public String getType() {
     return type;
@@ -81,8 +86,9 @@ public class BankItem   {
 
   
   /**
+   * Identificador del banco padre (si un banco tiene banca personas y empresas, el primero será el padre del segundo)
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identificador del banco padre (si un banco tiene banca personas y empresas, el primero será el padre del segundo)")
   @JsonProperty("parent")
   public String getParent() {
     return parent;
