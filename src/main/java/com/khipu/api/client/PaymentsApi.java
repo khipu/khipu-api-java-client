@@ -16,7 +16,7 @@ import com.khipu.api.model.SuccessResponse;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-12T16:32:49.586-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-09-13T12:16:49.253-03:00")
 public class PaymentsApi {
   private ApiClient apiClient;
 
@@ -125,6 +125,7 @@ public class PaymentsApi {
    * - responsibleUserEmail Correo electrónico del responsable de este cobro, debe corresponder a un usuario khipu con permisos para cobrar usando esta cuenta de cobro
    * - fixedPayerPersonalIdentifier Identificador personal. Si se especifica, solo podrá ser pagado usando ese identificador
    * - integratorFee Comisión para el integrador. Sólo es válido si la cuenta de cobro tiene una cuenta de integrador asociada
+   * - collectAccountUuid Para cuentas de cobro con más cuenta propia. Permite elegir la cuenta donde debe ocurrir la transferencia.
    * @return PaymentsCreateResponse
    */
   public PaymentsCreateResponse paymentsPost (String subject, String currency, Double amount,  Map<String, Object> options) throws ApiException {
@@ -226,6 +227,9 @@ public class PaymentsApi {
 
       if(options.containsKey("integratorFee") && options.get("integratorFee") != null)
         formParams.put("integrator_fee", options.get("integratorFee"));
+
+      if(options.containsKey("collectAccountUuid") && options.get("collectAccountUuid") != null)
+        formParams.put("collect_account_uuid", options.get("collectAccountUuid"));
 
       
     }

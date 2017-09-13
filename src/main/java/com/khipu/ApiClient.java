@@ -32,7 +32,6 @@ import java.math.BigDecimal;
 
 import java.net.URLEncoder;
 
-import java.io.IOException;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 
@@ -46,7 +45,7 @@ import com.khipu.auth.ApiKeyAuth;
 import com.khipu.auth.OAuth;
 import com.khipu.auth.KhipuAuth;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-12T16:32:49.586-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-09-13T12:16:49.253-03:00")
 public class ApiClient {
   private Map<String, Client> hostMap = new HashMap<String, Client>();
   private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -247,7 +246,7 @@ public class ApiClient {
   public Date parseDate(String str) {
     try {
       return dateFormat.parse(str);
-    } catch (java.text.ParseException e) {
+    } catch (ParseException e) {
       throw new RuntimeException(e);
     }
   }
@@ -454,7 +453,11 @@ public class ApiClient {
     if (queryParams != null) {
       for (Pair queryParam : queryParams) {
         if (queryParam.getValue() != null) {
-          target = target.queryParam(queryParam.getName(), queryParam.getValue());
+          try {
+            target = target.queryParam(queryParam.getName(), URLEncoder.encode(queryParam.getValue(), "UTF-8"));
+          } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+          }
         }
       }
     }
