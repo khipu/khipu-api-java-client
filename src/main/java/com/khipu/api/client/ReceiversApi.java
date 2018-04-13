@@ -6,14 +6,14 @@ import com.khipu.Configuration;
 import com.khipu.Pair;
 import com.khipu.TypeRef;
 
-import com.khipu.api.model.ReceiversCreateResponse;
 import com.khipu.api.model.ServiceError;
-import com.khipu.api.model.AuthorizationError;
+import com.khipu.api.model.ReceiversCreateResponse;
 import com.khipu.api.model.ValidationError;
+import com.khipu.api.model.AuthorizationError;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-09-13T12:16:49.253-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-12T11:53:13.728-03:00")
 public class ReceiversApi {
   private ApiClient apiClient;
 
@@ -53,6 +53,12 @@ public class ReceiversApi {
    * @param contactEmail Correo electrónico del contacto del cobrador.
    * @param contactPhone Teléfono del contacto del cobrador.
    * @param options Mapa de parámetros opcionales
+   * - bankAccountBankId Identificador del banco.
+   * - bankAccountIdentifier Identificador personal del dueño de la cuenta de banco.
+   * - bankAccountName Nombre de la cuenta de banco.
+   * - bankAccountNumber Número de la cuenta en el banco.
+   * - notifyUrl URL por omisión para el webservice donde se notificará el pago.
+   * - renditionUrl URL para el webservice donde se notificará la rendición.
    * @return ReceiversCreateResponse
    */
   public ReceiversCreateResponse receiversPost (String adminFirstName, String adminLastName, String adminEmail, String countryCode, String businessIdentifier, String businessCategory, String businessName, String businessPhone, String businessAddressLine1, String businessAddressLine2, String businessAddressLine3, String contactFullName, String contactJobTitle, String contactEmail, String contactPhone,  Map<String, Object> options) throws ApiException {
@@ -173,6 +179,24 @@ public class ReceiversApi {
     
 
     if(options != null) {
+      if(options.containsKey("bankAccountBankId") && options.get("bankAccountBankId") != null)
+        formParams.put("bank_account_bank_id", options.get("bankAccountBankId"));
+
+      if(options.containsKey("bankAccountIdentifier") && options.get("bankAccountIdentifier") != null)
+        formParams.put("bank_account_identifier", options.get("bankAccountIdentifier"));
+
+      if(options.containsKey("bankAccountName") && options.get("bankAccountName") != null)
+        formParams.put("bank_account_name", options.get("bankAccountName"));
+
+      if(options.containsKey("bankAccountNumber") && options.get("bankAccountNumber") != null)
+        formParams.put("bank_account_number", options.get("bankAccountNumber"));
+
+      if(options.containsKey("notifyUrl") && options.get("notifyUrl") != null)
+        formParams.put("notify_url", options.get("notifyUrl"));
+
+      if(options.containsKey("renditionUrl") && options.get("renditionUrl") != null)
+        formParams.put("rendition_url", options.get("renditionUrl"));
+
       
     }
 
@@ -186,7 +210,7 @@ public class ReceiversApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "khipu" };
+    String[] authNames = new String[] {  };
 
     
     TypeRef returnType = new TypeRef<ReceiversCreateResponse>() {};

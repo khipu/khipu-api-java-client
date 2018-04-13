@@ -1,8 +1,8 @@
 package com.khipu.api.model;
 
 import com.khipu.StringUtil;
-import com.khipu.api.model.ErrorItem;
 import java.util.*;
+import com.khipu.api.model.ErrorItem;
 
 
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-09-13T12:16:49.253-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-12T11:53:13.728-03:00")
 public class ValidationError   {
   
   private Integer status = null;

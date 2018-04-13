@@ -6,14 +6,14 @@ import com.khipu.Configuration;
 import com.khipu.Pair;
 import com.khipu.TypeRef;
 
-import com.khipu.api.model.BanksResponse;
 import com.khipu.api.model.ServiceError;
-import com.khipu.api.model.AuthorizationError;
+import com.khipu.api.model.BanksResponse;
 import com.khipu.api.model.ValidationError;
+import com.khipu.api.model.AuthorizationError;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-09-13T12:16:49.253-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-12T11:53:13.728-03:00")
 public class BanksApi {
   private ApiClient apiClient;
 
@@ -81,7 +81,7 @@ public class BanksApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] { "khipu" };
+    String[] authNames = new String[] {  };
 
     
     TypeRef returnType = new TypeRef<BanksResponse>() {};
