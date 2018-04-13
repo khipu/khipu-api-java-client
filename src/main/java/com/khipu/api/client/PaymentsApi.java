@@ -16,7 +16,7 @@ import com.khipu.api.model.SuccessResponse;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T11:56:16.237-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T17:04:37.471-03:00")
 public class PaymentsApi {
   private ApiClient apiClient;
 
@@ -92,7 +92,7 @@ public class PaymentsApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] {  };
+    String[] authNames = new String[] { "khipu" };
 
     
     TypeRef returnType = new TypeRef<PaymentsResponse>() {};
@@ -244,7 +244,7 @@ public class PaymentsApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] {  };
+    String[] authNames = new String[] { "khipu" };
 
     
     TypeRef returnType = new TypeRef<PaymentsCreateResponse>() {};
@@ -306,7 +306,7 @@ public class PaymentsApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] {  };
+    String[] authNames = new String[] { "khipu" };
 
     
     TypeRef returnType = new TypeRef<PaymentsResponse>() {};
@@ -368,7 +368,7 @@ public class PaymentsApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] {  };
+    String[] authNames = new String[] { "khipu" };
 
     
     TypeRef returnType = new TypeRef<SuccessResponse>() {};
@@ -434,7 +434,7 @@ public class PaymentsApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] {  };
+    String[] authNames = new String[] { "khipu" };
 
     
     TypeRef returnType = new TypeRef<SuccessResponse>() {};

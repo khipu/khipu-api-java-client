@@ -45,7 +45,7 @@ import com.khipu.auth.ApiKeyAuth;
 import com.khipu.auth.OAuth;
 import com.khipu.auth.KhipuAuth;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T11:56:16.237-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T17:04:37.471-03:00")
 public class ApiClient {
   private Map<String, Client> hostMap = new HashMap<String, Client>();
   private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -74,6 +74,7 @@ public class ApiClient {
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
+    authentications.put("khipu", new KhipuAuth());
 
     // Prevent the authentications from being modified.
     authentications = Collections.unmodifiableMap(authentications);

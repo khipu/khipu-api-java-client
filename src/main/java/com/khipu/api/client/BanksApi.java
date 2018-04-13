@@ -13,7 +13,7 @@ import com.khipu.api.model.AuthorizationError;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T11:56:16.237-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T17:04:37.471-03:00")
 public class BanksApi {
   private ApiClient apiClient;
 
@@ -81,7 +81,7 @@ public class BanksApi {
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] authNames = new String[] {  };
+    String[] authNames = new String[] { "khipu" };
 
     
     TypeRef returnType = new TypeRef<BanksResponse>() {};
