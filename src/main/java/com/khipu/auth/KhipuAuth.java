@@ -33,6 +33,15 @@ public class KhipuAuth implements Authentication {
     for (Map.Entry<String, Object> entry : formParams.entrySet()) {
       if (entry.getValue() instanceof Date) {
         params.put(entry.getKey(), apiClient.formatDate((Date) entry.getValue()));
+      } else if (entry.getValue() instanceof List) {
+        StringBuffer sb = new StringBuffer();
+        for(Object object:((List)entry.getValue())){
+          if (sb.length()>0){
+            sb.append(",");
+          }
+          sb.append(object.toString());
+        }
+        params.put(entry.getKey(), sb.toString());
       } else {
         params.put(entry.getKey(), entry.getValue().toString());
       }

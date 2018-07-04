@@ -16,7 +16,7 @@ import com.khipu.api.model.SuccessResponse;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T17:04:37.471-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-04T15:34:43.055-04:00")
 public class PaymentsApi {
   private ApiClient apiClient;
 
@@ -126,6 +126,7 @@ public class PaymentsApi {
    * - fixedPayerPersonalIdentifier Identificador personal. Si se especifica, solo podrá ser pagado usando ese identificador
    * - integratorFee Comisión para el integrador. Sólo es válido si la cuenta de cobro tiene una cuenta de integrador asociada
    * - collectAccountUuid Para cuentas de cobro con más cuenta propia. Permite elegir la cuenta donde debe ocurrir la transferencia.
+   * - confirmTimeoutDate Fecha de rendición del cobro. Es también la fecha final para poder reembolsar el cobro. Formato ISO-8601. Ej: 2017-03-01T13:00:00Z
    * @return PaymentsCreateResponse
    */
   public PaymentsCreateResponse paymentsPost (String subject, String currency, Double amount,  Map<String, Object> options) throws ApiException {
@@ -230,6 +231,9 @@ public class PaymentsApi {
 
       if(options.containsKey("collectAccountUuid") && options.get("collectAccountUuid") != null)
         formParams.put("collect_account_uuid", options.get("collectAccountUuid"));
+
+      if(options.containsKey("confirmTimeoutDate") && options.get("confirmTimeoutDate") != null)
+        formParams.put("confirm_timeout_date", options.get("confirmTimeoutDate"));
 
       
     }
@@ -377,6 +381,68 @@ public class PaymentsApi {
   }
   
   /**
+   * Confirmar el pago.
+   * Al confirmar el pago, este será rendido al día siguiente.
+   * @param id Identificador del pago
+   * @param options Mapa de parámetros opcionales
+   * @return SuccessResponse
+   */
+  public SuccessResponse paymentsIdConfirmPost (String id,  Map<String, Object> options) throws ApiException {
+    Object postBody = null;
+    
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling paymentsIdConfirmPost");
+    }
+    
+    // create path and map variables
+    String path = "/payments/{id}/confirm".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    if(options != null) {
+        
+    }
+
+
+    
+
+    if(options != null) {
+        
+    }
+
+
+    
+
+    if(options != null) {
+      
+    }
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/x-www-form-urlencoded"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "khipu" };
+
+    
+    TypeRef returnType = new TypeRef<SuccessResponse>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
    * Reembolsar total o parcialmente un pago
    * Reembolsa total o parcialmente el monto de un pago. Esta operación solo se puede realizar en los comercios que recauden en cuenta khipu y antes de la rendición de los fondos correspondientes.
    * @param id Identificador del pago
@@ -488,6 +554,17 @@ public class PaymentsApi {
   */
   public SuccessResponse paymentsIdDelete (String id) throws ApiException {
     return paymentsIdDelete(id, null);
+    
+  }
+  
+  /**
+  * Confirmar el pago.
+  * Al confirmar el pago, este será rendido al día siguiente.
+  * @param id Identificador del pago
+  * @return SuccessResponse
+  */
+  public SuccessResponse paymentsIdConfirmPost (String id) throws ApiException {
+    return paymentsIdConfirmPost(id, null);
     
   }
   
