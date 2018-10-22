@@ -13,7 +13,7 @@ import com.khipu.api.model.AuthorizationError;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-04T15:34:43.055-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-22T10:09:36.361-03:00")
 public class ReceiversApi {
   private ApiClient apiClient;
 

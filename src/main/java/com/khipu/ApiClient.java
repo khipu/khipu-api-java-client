@@ -45,7 +45,7 @@ import com.khipu.auth.ApiKeyAuth;
 import com.khipu.auth.OAuth;
 import com.khipu.auth.KhipuAuth;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-04T15:34:43.055-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-22T10:09:36.361-03:00")
 public class ApiClient {
   private Map<String, Client> hostMap = new HashMap<String, Client>();
   private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -438,7 +438,7 @@ public class ApiClient {
    * @return The response body in type of string
    */
   public <T> T invokeAPI(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames, TypeRef returnType) throws ApiException {
-    updateParamsForAuth(basePath, path, method, authNames, queryParams, headerParams, formParams);
+    updateParamsForAuth(basePath, path, method, authNames, queryParams, headerParams, formParams, body);
 
 
     final ClientConfig clientConfig = new ClientConfig();
@@ -581,11 +581,11 @@ public class ApiClient {
    *
    * @param authNames The authentications to apply
    */
-  private void updateParamsForAuth(String basePath, String path, String method, String[] authNames, List<Pair> queryParams, Map<String, String> headerParams, Map<String, Object> formParams) {
+  private void updateParamsForAuth(String basePath, String path, String method, String[] authNames, List<Pair> queryParams, Map<String, String> headerParams, Map<String, Object> formParams, Object body) {
     for (String authName : authNames) {
       Authentication auth = authentications.get(authName);
       if (auth == null) throw new RuntimeException("Authentication undefined: " + authName);
-        auth.applyToParams(this, basePath, path, method, queryParams, headerParams, formParams);
+        auth.applyToParams(this, basePath, path, method, queryParams, headerParams, formParams, body);
     }
   }
 }

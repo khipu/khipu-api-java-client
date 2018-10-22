@@ -1,5 +1,5 @@
 group = 'com.khipu'
-version = '2.7.7'
+version = '2.8.0'
 
 buildscript {
     repositories {
@@ -87,11 +87,10 @@ if(hasProperty('target') && target == 'android') {
 }
 
 ext {
-    swagger_annotations_version = "1.5.0"
-    jackson_version = "2.4.2"
-    jersey_version = "2.6"
-    jodatime_version = "2.3"
-    junit_version = "4.8.1"
+    swagger_annotations_version = "1.5.4"
+    jackson_version = "2.9.6"
+    jersey_version = "2.25.1"
+    junit_version = "4.12"
 }
 
 dependencies {
@@ -101,7 +100,6 @@ dependencies {
     compile "com.fasterxml.jackson.core:jackson-core:$jackson_version"
     compile "com.fasterxml.jackson.core:jackson-annotations:$jackson_version"
     compile "com.fasterxml.jackson.core:jackson-databind:$jackson_version"
-    compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:2.1.5"
-    compile "joda-time:joda-time:$jodatime_version"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jackson_version"
     testCompile "junit:junit:$junit_version"
 }

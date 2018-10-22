@@ -9,7 +9,7 @@ import java.util.List;
 import java.io.UnsupportedEncodingException;
 import javax.xml.bind.DatatypeConverter;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-04T15:34:43.055-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-22T10:09:36.361-03:00")
 public class HttpBasicAuth implements Authentication {
   private String username;
   private String password;
@@ -31,7 +31,7 @@ public class HttpBasicAuth implements Authentication {
   }
 
   @Override
-  public void applyToParams(ApiClient apiClient, String basePath, String path, String method, List<Pair> queryParams, Map<String, String> headerParams, Map<String, Object> formParams) {
+  public void applyToParams(ApiClient apiClient, String basePath, String path, String method, List<Pair> queryParams, Map<String, String> headerParams, Map<String, Object> formParams, Object body) {
     String str = (username == null ? "" : username) + ":" + (password == null ? "" : password);
     try {
       headerParams.put("Authorization", "Basic " + DatatypeConverter.printBase64Binary(str.getBytes("UTF-8")));

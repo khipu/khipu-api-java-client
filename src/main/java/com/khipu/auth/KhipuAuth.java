@@ -13,6 +13,8 @@ import java.util.Map;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
+import com.khipu.ApiException;
+import com.khipu.JSON;
 import com.khipu.Pair;
 import com.khipu.ApiClient;
 
@@ -20,10 +22,11 @@ public class KhipuAuth implements Authentication {
 
   private long receiverId;
   private String secret;
+  private JSON json = new JSON();
 
 
   @Override
-  public void applyToParams(ApiClient apiClient, String basePath, String path, String method, List<Pair> queryParams, Map<String, String> headerParams, Map<String, Object> formParams) {
+  public void applyToParams(ApiClient apiClient, String basePath, String path, String method, List<Pair> queryParams, Map<String, String> headerParams, Map<String, Object> formParams, Object body) {
     String toSign = method + "&" + percentEncode(basePath + path);
 
     Map<String, String> params = new HashMap<String, String>();
@@ -53,7 +56,13 @@ public class KhipuAuth implements Authentication {
     for(String key : keys) {
       toSign += "&" + percentEncode(key) + "=" + percentEncode(params.get(key));
     }
-
+    if (body!=null){
+        try{
+           toSign += "&"+json.serializeCanonical(body);
+        }catch(ApiException e) {
+           e.printStackTrace();
+        }
+    }
     String hmac = HmacSHA256(secret, toSign);
     headerParams.put("Authorization", receiverId + ":" + hmac);
   }

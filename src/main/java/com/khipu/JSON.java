@@ -6,7 +6,7 @@ import com.fasterxml.jackson.datatype.joda.*;
 
 import java.io.IOException;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-04T15:34:43.055-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-22T10:09:36.361-03:00")
 public class JSON {
   private ObjectMapper mapper;
 
@@ -17,6 +17,7 @@ public class JSON {
     mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
     mapper.enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING);
     mapper.enable(DeserializationFeature.READ_ENUMS_USING_TO_STRING);
+    mapper.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true);
     mapper.registerModule(new JodaModule());
   }
 
@@ -33,6 +34,24 @@ public class JSON {
       throw new ApiException(400, e.getMessage());
     }
   }
+
+  /**
+   * Serialize the given Java object into canonical JSON string
+   *
+   */
+
+  public String serializeCanonical(Object obj) throws ApiException {
+    try {
+      if (obj != null){
+        Object tmpObject = mapper.readValue(mapper.writeValueAsString(obj), Object.class);
+        return mapper.writeValueAsString(tmpObject);
+      } else
+        return null;
+      } catch (Exception e) {
+        throw new ApiException(400, e.getMessage());
+      }
+  }
+
 
   /**
    * Deserialize the given JSON string to Java object.

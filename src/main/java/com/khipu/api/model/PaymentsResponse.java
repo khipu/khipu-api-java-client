@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-04T15:34:43.055-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-22T10:09:36.361-03:00")
 public class PaymentsResponse   {
   
   private String paymentId = null;
@@ -183,8 +183,9 @@ public class PaymentsResponse   {
 
   
   /**
+   * Monto del pago, sin separador de miles y usando '.' como separador de decimales
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Monto del pago, sin separador de miles y usando '.' como separador de decimales")
   @JsonProperty("amount")
   public Double getAmount() {
     return amount;
