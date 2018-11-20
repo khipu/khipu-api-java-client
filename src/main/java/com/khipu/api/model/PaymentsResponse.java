@@ -11,13 +11,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-22T10:09:36.361-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
 public class PaymentsResponse   {
   
   private String paymentId = null;
   private String paymentUrl = null;
   private String simplifiedTransferUrl = null;
   private String transferUrl = null;
+  private String webpayUrl = null;
+  private String hitesUrl = null;
   private String appUrl = null;
   private Boolean readyForTerminal = null;
   private String notificationToken = null;
@@ -105,6 +107,32 @@ public class PaymentsResponse   {
 
   
   /**
+   * URL de pago con Webpay
+   **/
+  @ApiModelProperty(value = "URL de pago con Webpay")
+  @JsonProperty("webpay_url")
+  public String getWebpayUrl() {
+    return webpayUrl;
+  }
+  public void setWebpayUrl(String webpayUrl) {
+    this.webpayUrl = webpayUrl;
+  }
+
+  
+  /**
+   * URL de pago con Hites
+   **/
+  @ApiModelProperty(value = "URL de pago con Hites")
+  @JsonProperty("hites_url")
+  public String getHitesUrl() {
+    return hitesUrl;
+  }
+  public void setHitesUrl(String hitesUrl) {
+    this.hitesUrl = hitesUrl;
+  }
+
+  
+  /**
    * URL para invocar el pago desde un dispositivo móvil usando la APP de khipu
    **/
   @ApiModelProperty(value = "URL para invocar el pago desde un dispositivo móvil usando la APP de khipu")
@@ -183,9 +211,9 @@ public class PaymentsResponse   {
 
   
   /**
-   * Monto del pago, sin separador de miles y usando '.' como separador de decimales
+   * Monto del pago, sin separador de miles y usando '.' como separador de decimales.
    **/
-  @ApiModelProperty(value = "Monto del pago, sin separador de miles y usando '.' como separador de decimales")
+  @ApiModelProperty(value = "Monto del pago, sin separador de miles y usando '.' como separador de decimales.")
   @JsonProperty("amount")
   public Double getAmount() {
     return amount;
@@ -530,6 +558,8 @@ public class PaymentsResponse   {
     sb.append("    paymentUrl: ").append(StringUtil.toIndentedString(paymentUrl)).append("\n");
     sb.append("    simplifiedTransferUrl: ").append(StringUtil.toIndentedString(simplifiedTransferUrl)).append("\n");
     sb.append("    transferUrl: ").append(StringUtil.toIndentedString(transferUrl)).append("\n");
+    sb.append("    webpayUrl: ").append(StringUtil.toIndentedString(webpayUrl)).append("\n");
+    sb.append("    hitesUrl: ").append(StringUtil.toIndentedString(hitesUrl)).append("\n");
     sb.append("    appUrl: ").append(StringUtil.toIndentedString(appUrl)).append("\n");
     sb.append("    readyForTerminal: ").append(StringUtil.toIndentedString(readyForTerminal)).append("\n");
     sb.append("    notificationToken: ").append(StringUtil.toIndentedString(notificationToken)).append("\n");

@@ -7,21 +7,21 @@ import com.khipu.Pair;
 import com.khipu.TypeRef;
 
 import com.khipu.api.model.ServiceError;
-import com.khipu.api.model.BanksResponse;
 import com.khipu.api.model.ValidationError;
+import com.khipu.api.model.PaymentMethodsResponse;
 import com.khipu.api.model.AuthorizationError;
 
 import java.util.*;
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-public class BanksApi {
+public class PaymentMethodsApi {
   private ApiClient apiClient;
 
-  public BanksApi() {
+  public PaymentMethodsApi() {
     this(Configuration.getDefaultApiClient());
   }
 
-  public BanksApi(ApiClient apiClient) {
+  public PaymentMethodsApi(ApiClient apiClient) {
     this.apiClient = apiClient;
   }
 
@@ -35,16 +35,23 @@ public class BanksApi {
 
   
   /**
-   * Obtener listado de bancos
-   * Obtiene el listado de bancos que pueden usarse para pagar a esta cuenta de cobro.
+   * Obtener listado de medios de pago disponible para una cuenta de cobrador
+   * Obtiene el listado de medios de pago que pueden usarse para pagar a esta cuenta de cobro.
+   * @param id Identificador del merchant
    * @param options Mapa de parámetros opcionales
-   * @return BanksResponse
+   * @return PaymentMethodsResponse
    */
-  public BanksResponse banksGet ( Map<String, Object> options) throws ApiException {
+  public PaymentMethodsResponse merchantsIdPaymentMethodsGet (String id,  Map<String, Object> options) throws ApiException {
     Object postBody = null;
     
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling merchantsIdPaymentMethodsGet");
+    }
+    
     // create path and map variables
-    String path = "/banks".replaceAll("\\{format\\}","json");
+    String path = "/merchants/{id}/paymentMethods".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -84,7 +91,7 @@ public class BanksApi {
     String[] authNames = new String[] { "khipu" };
 
     
-    TypeRef returnType = new TypeRef<BanksResponse>() {};
+    TypeRef returnType = new TypeRef<PaymentMethodsResponse>() {};
     return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
@@ -93,12 +100,13 @@ public class BanksApi {
 
   
   /**
-  * Obtener listado de bancos
-  * Obtiene el listado de bancos que pueden usarse para pagar a esta cuenta de cobro.
-  * @return BanksResponse
+  * Obtener listado de medios de pago disponible para una cuenta de cobrador
+  * Obtiene el listado de medios de pago que pueden usarse para pagar a esta cuenta de cobro.
+  * @param id Identificador del merchant
+  * @return PaymentMethodsResponse
   */
-  public BanksResponse banksGet () throws ApiException {
-    return banksGet(null);
+  public PaymentMethodsResponse merchantsIdPaymentMethodsGet (String id) throws ApiException {
+    return merchantsIdPaymentMethodsGet(id, null);
     
   }
   

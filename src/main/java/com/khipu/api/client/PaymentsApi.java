@@ -16,7 +16,7 @@ import com.khipu.api.model.SuccessResponse;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-22T10:09:36.361-03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
 public class PaymentsApi {
   private ApiClient apiClient;
 
@@ -127,6 +127,7 @@ public class PaymentsApi {
    * - integratorFee Comisión para el integrador. Sólo es válido si la cuenta de cobro tiene una cuenta de integrador asociada
    * - collectAccountUuid Para cuentas de cobro con más cuenta propia. Permite elegir la cuenta donde debe ocurrir la transferencia.
    * - confirmTimeoutDate Fecha de rendición del cobro. Es también la fecha final para poder reembolsar el cobro. Formato ISO-8601. Ej: 2017-03-01T13:00:00Z
+   * - mandatoryPaymentMethod Si se especifica, el cobro sólo se podrá pagar utilizando ese medio de pago. El valor para el campo de obtiene consultando el endpoint &#39;Consulta medios de pago disponibles&#39;.
    * @return PaymentsCreateResponse
    */
   public PaymentsCreateResponse paymentsPost (String subject, String currency, Double amount,  Map<String, Object> options) throws ApiException {
@@ -234,6 +235,9 @@ public class PaymentsApi {
 
       if(options.containsKey("confirmTimeoutDate") && options.get("confirmTimeoutDate") != null)
         formParams.put("confirm_timeout_date", options.get("confirmTimeoutDate"));
+
+      if(options.containsKey("mandatoryPaymentMethod") && options.get("mandatoryPaymentMethod") != null)
+        formParams.put("mandatory_payment_method", options.get("mandatoryPaymentMethod"));
 
       
     }
