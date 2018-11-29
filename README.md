@@ -1,6 +1,6 @@
 ## Installation
 
-Add maven dependency: _com.khipu:khipu-api-client:2.7.0_
+Add maven dependency: _com.khipu:khipu-api-client:2.8.1.7_
 
 ## Usage
 
