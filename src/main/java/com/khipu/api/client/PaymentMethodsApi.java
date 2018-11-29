@@ -38,7 +38,7 @@ public class PaymentMethodsApi {
    * Obtener listado de medios de pago disponible para una cuenta de cobrador
    * Obtiene el listado de medios de pago que pueden usarse para pagar a esta cuenta de cobro.
    * @param id Identificador del merchant
-   * @param options Mapa de parámetros opcionales
+   * @param options Mapa de par��metros opcionales
    * @return PaymentMethodsResponse
    */
   public PaymentMethodsResponse merchantsIdPaymentMethodsGet (String id,  Map<String, Object> options) throws ApiException {

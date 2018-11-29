@@ -41,7 +41,7 @@ public class PaymentsApi {
    * Obtener información de un pago
    * Información completa del pago. Datos con los que fue creado y el estado actual del pago. Se obtiene del notification_token que envia khipu cuando el pago es conciliado.
    * @param notificationToken Token de notifiación recibido usando la API de notificaiones 1.3 o superior.
-   * @param options Mapa de parámetros opcionales
+   * @param options Mapa de par��metros opcionales
    * @return PaymentsResponse
    */
   public PaymentsResponse paymentsGet (String notificationToken,  Map<String, Object> options) throws ApiException {
@@ -106,7 +106,7 @@ public class PaymentsApi {
    * @param subject Motivo
    * @param currency El código de moneda en formato ISO-4217
    * @param amount El monto del cobro. Sin separador de miles y usando &#39;.&#39; como separador de decimales. Hasta 4 lugares decimales, dependiendo de la moneda
-   * @param options Mapa de parámetros opcionales
+   * @param options Mapa de par��metros opcionales
    * - transactionId Identificador propio de la  transacción. Ej: número de factura u orden de compra
    * - custom Parámetro para enviar información personalizada de la transacción. Ej: documento XML con el detalle del carro de compra
    * - body Descripción del cobro
@@ -264,7 +264,7 @@ public class PaymentsApi {
    * Obtener información de un pago
    * Información completa del pago. Datos con los que fue creado y el estado actual del pago.
    * @param id Identificador del pago
-   * @param options Mapa de parámetros opcionales
+   * @param options Mapa de par��metros opcionales
    * @return PaymentsResponse
    */
   public PaymentsResponse paymentsIdGet (String id,  Map<String, Object> options) throws ApiException {
@@ -326,7 +326,7 @@ public class PaymentsApi {
    * Borrar un pago
    * Solo se pueden borrar pagos que estén pendientes de pagar. Esta operación no puede deshacerse.
    * @param id Identificador del pago
-   * @param options Mapa de parámetros opcionales
+   * @param options Mapa de par��metros opcionales
    * @return SuccessResponse
    */
   public SuccessResponse paymentsIdDelete (String id,  Map<String, Object> options) throws ApiException {
@@ -388,7 +388,7 @@ public class PaymentsApi {
    * Confirmar el pago.
    * Al confirmar el pago, este será rendido al día siguiente.
    * @param id Identificador del pago
-   * @param options Mapa de parámetros opcionales
+   * @param options Mapa de par��metros opcionales
    * @return SuccessResponse
    */
   public SuccessResponse paymentsIdConfirmPost (String id,  Map<String, Object> options) throws ApiException {
@@ -450,7 +450,7 @@ public class PaymentsApi {
    * Reembolsar total o parcialmente un pago
    * Reembolsa total o parcialmente el monto de un pago. Esta operación solo se puede realizar en los comercios que recauden en cuenta khipu y antes de la rendición de los fondos correspondientes.
    * @param id Identificador del pago
-   * @param options Mapa de parámetros opcionales
+   * @param options Mapa de par��metros opcionales
    * - amount El monto a devolver. Sin separador de miles y usando &#39;.&#39; como separador de decimales. Hasta 4 lugares decimales, dependiendo de la moneda. Si se omite el reembolso se hará por el total del monto del pago.
    * @return SuccessResponse
    */

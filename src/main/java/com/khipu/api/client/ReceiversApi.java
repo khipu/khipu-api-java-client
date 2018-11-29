@@ -52,7 +52,7 @@ public class ReceiversApi {
    * @param contactJobTitle Cargo del contacto del cobrador.
    * @param contactEmail Correo electrónico del contacto del cobrador.
    * @param contactPhone Teléfono del contacto del cobrador.
-   * @param options Mapa de parámetros opcionales
+   * @param options Mapa de par��metros opcionales
    * - bankAccountBankId Identificador del banco.
    * - bankAccountIdentifier Identificador personal del dueño de la cuenta de banco.
    * - bankAccountName Nombre de la cuenta de banco.

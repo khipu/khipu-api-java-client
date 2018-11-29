@@ -37,7 +37,7 @@ public class BanksApi {
   /**
    * Obtener listado de bancos
    * Obtiene el listado de bancos que pueden usarse para pagar a esta cuenta de cobro.
-   * @param options Mapa de parámetros opcionales
+   * @param options Mapa de par��metros opcionales
    * @return BanksResponse
    */
   public BanksResponse banksGet ( Map<String, Object> options) throws ApiException {
