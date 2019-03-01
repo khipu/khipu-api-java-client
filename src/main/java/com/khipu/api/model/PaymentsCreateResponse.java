@@ -16,6 +16,9 @@ public class PaymentsCreateResponse   {
   private String paymentUrl = null;
   private String simplifiedTransferUrl = null;
   private String transferUrl = null;
+  private String webpayUrl = null;
+  private String hitesUrl = null;
+  private String paymeUrl = null;
   private String appUrl = null;
   private Boolean readyForTerminal = null;
 
@@ -73,6 +76,45 @@ public class PaymentsCreateResponse   {
 
   
   /**
+   * URL de pago usando Webpay
+   **/
+  @ApiModelProperty(value = "URL de pago usando Webpay")
+  @JsonProperty("webpay_url")
+  public String getWebpayUrl() {
+    return webpayUrl;
+  }
+  public void setWebpayUrl(String webpayUrl) {
+    this.webpayUrl = webpayUrl;
+  }
+
+  
+  /**
+   * URL de pago usando Hites
+   **/
+  @ApiModelProperty(value = "URL de pago usando Hites")
+  @JsonProperty("hites_url")
+  public String getHitesUrl() {
+    return hitesUrl;
+  }
+  public void setHitesUrl(String hitesUrl) {
+    this.hitesUrl = hitesUrl;
+  }
+
+  
+  /**
+   * URL de pago usando Hites
+   **/
+  @ApiModelProperty(value = "URL de pago usando Hites")
+  @JsonProperty("payme_url")
+  public String getPaymeUrl() {
+    return paymeUrl;
+  }
+  public void setPaymeUrl(String paymeUrl) {
+    this.paymeUrl = paymeUrl;
+  }
+
+  
+  /**
    * URL para invocar el pago desde un dispositivo móvil usando la APP de khipu
    **/
   @ApiModelProperty(value = "URL para invocar el pago desde un dispositivo móvil usando la APP de khipu")
@@ -108,6 +150,9 @@ public class PaymentsCreateResponse   {
     sb.append("    paymentUrl: ").append(StringUtil.toIndentedString(paymentUrl)).append("\n");
     sb.append("    simplifiedTransferUrl: ").append(StringUtil.toIndentedString(simplifiedTransferUrl)).append("\n");
     sb.append("    transferUrl: ").append(StringUtil.toIndentedString(transferUrl)).append("\n");
+    sb.append("    webpayUrl: ").append(StringUtil.toIndentedString(webpayUrl)).append("\n");
+    sb.append("    hitesUrl: ").append(StringUtil.toIndentedString(hitesUrl)).append("\n");
+    sb.append("    paymeUrl: ").append(StringUtil.toIndentedString(paymeUrl)).append("\n");
     sb.append("    appUrl: ").append(StringUtil.toIndentedString(appUrl)).append("\n");
     sb.append("    readyForTerminal: ").append(StringUtil.toIndentedString(readyForTerminal)).append("\n");
     sb.append("}");

@@ -20,6 +20,7 @@ public class PaymentsResponse   {
   private String transferUrl = null;
   private String webpayUrl = null;
   private String hitesUrl = null;
+  private String paymeUrl = null;
   private String appUrl = null;
   private Boolean readyForTerminal = null;
   private String notificationToken = null;
@@ -129,6 +130,19 @@ public class PaymentsResponse   {
   }
   public void setHitesUrl(String hitesUrl) {
     this.hitesUrl = hitesUrl;
+  }
+
+  
+  /**
+   * URL de pago con Hites
+   **/
+  @ApiModelProperty(value = "URL de pago con Hites")
+  @JsonProperty("payme_url")
+  public String getPaymeUrl() {
+    return paymeUrl;
+  }
+  public void setPaymeUrl(String paymeUrl) {
+    this.paymeUrl = paymeUrl;
   }
 
   
@@ -560,6 +574,7 @@ public class PaymentsResponse   {
     sb.append("    transferUrl: ").append(StringUtil.toIndentedString(transferUrl)).append("\n");
     sb.append("    webpayUrl: ").append(StringUtil.toIndentedString(webpayUrl)).append("\n");
     sb.append("    hitesUrl: ").append(StringUtil.toIndentedString(hitesUrl)).append("\n");
+    sb.append("    paymeUrl: ").append(StringUtil.toIndentedString(paymeUrl)).append("\n");
     sb.append("    appUrl: ").append(StringUtil.toIndentedString(appUrl)).append("\n");
     sb.append("    readyForTerminal: ").append(StringUtil.toIndentedString(readyForTerminal)).append("\n");
     sb.append("    notificationToken: ").append(StringUtil.toIndentedString(notificationToken)).append("\n");
