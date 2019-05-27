@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import java.net.URLDecoder;
+
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
@@ -27,7 +29,8 @@ public class KhipuAuth implements Authentication {
 
   @Override
   public void applyToParams(ApiClient apiClient, String basePath, String path, String method, List<Pair> queryParams, Map<String, String> headerParams, Map<String, Object> formParams, Object body) {
-    String toSign = method + "&" + percentEncode(basePath + path);
+
+    String toSign = method + "&" + percentEncode(basePath + unescapeString(path));
 
     Map<String, String> params = new HashMap<String, String>();
     for (Pair pair : queryParams) {
@@ -99,6 +102,15 @@ public class KhipuAuth implements Authentication {
     }
     return hash;
   }
+
+  public static String unescapeString(String str) {
+    try {
+      return URLDecoder.decode(str.replaceAll("%20", "\\+"), "utf8");
+    } catch (UnsupportedEncodingException e) {
+      return str;
+    }
+  }
+
 
   public static String percentEncode(String string) {
     if (string == null) {
