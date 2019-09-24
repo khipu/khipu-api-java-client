@@ -38,7 +38,7 @@ public class App
 				, 100.0 //Monto
 				, options
 		);
-        	System.out.println("resp = " + apiClient.paymentsIdGet(response.getPaymentId()));
+        	System.out.println("resp = " + paymentsApi.paymentsIdGet(response.getPaymentId()));
     }
 }
 ```
