@@ -53,6 +53,7 @@ public class PaymentsResponse   {
   private Boolean sendReminders = null;
   private Boolean sendEmail = null;
   private String paymentMethod = null;
+  private String fundsSource = null;
 
   
   /**
@@ -562,6 +563,19 @@ public class PaymentsResponse   {
   }
 
   
+  /**
+   * Origen de fondos usado por el pagador, puede ser 'debit' para pago con débito, 'prepaid' para pago con prepago, 'credit' para pago con crédito o vacío en el caso de que se haya pagado mediante transferencia bancaria.
+   **/
+  @ApiModelProperty(value = "Origen de fondos usado por el pagador, puede ser 'debit' para pago con débito, 'prepaid' para pago con prepago, 'credit' para pago con crédito o vacío en el caso de que se haya pagado mediante transferencia bancaria.")
+  @JsonProperty("funds_source")
+  public String getFundsSource() {
+    return fundsSource;
+  }
+  public void setFundsSource(String fundsSource) {
+    this.fundsSource = fundsSource;
+  }
+
+  
 
   @Override
   public String toString()  {
@@ -607,6 +621,7 @@ public class PaymentsResponse   {
     sb.append("    sendReminders: ").append(StringUtil.toIndentedString(sendReminders)).append("\n");
     sb.append("    sendEmail: ").append(StringUtil.toIndentedString(sendEmail)).append("\n");
     sb.append("    paymentMethod: ").append(StringUtil.toIndentedString(paymentMethod)).append("\n");
+    sb.append("    fundsSource: ").append(StringUtil.toIndentedString(fundsSource)).append("\n");
     sb.append("}");
     return sb.toString();
   }
