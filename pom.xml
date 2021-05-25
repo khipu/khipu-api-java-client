@@ -4,7 +4,7 @@
   <artifactId>khipu-api-client</artifactId>
   <packaging>jar</packaging>
   <name>khipu-api-client</name>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <description>A java wrapper for the khipu APIs</description>
   <url>https://github.com/khipu/khipu-api-java-client</url>
   <parent>
