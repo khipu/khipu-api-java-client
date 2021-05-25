@@ -57,9 +57,9 @@ public class PaymentsResponse   {
 
   
   /**
-   * Identificador único del pago, es una cadena alfanumérica de 12 caracteres
+   * Identificador único del pago, es una cadena alfanumérica de 12 caracteres. Cómo este identificador es único, se puede usar, por ejemplo, para evitar procesar una notificación repetida. (Khipu espera un código 200 al notificar un pago, si esto no ocurre se reintenta hasta por dos días).
    **/
-  @ApiModelProperty(value = "Identificador único del pago, es una cadena alfanumérica de 12 caracteres")
+  @ApiModelProperty(value = "Identificador único del pago, es una cadena alfanumérica de 12 caracteres. Cómo este identificador es único, se puede usar, por ejemplo, para evitar procesar una notificación repetida. (Khipu espera un código 200 al notificar un pago, si esto no ocurre se reintenta hasta por dos días).")
   @JsonProperty("payment_id")
   public String getPaymentId() {
     return paymentId;
